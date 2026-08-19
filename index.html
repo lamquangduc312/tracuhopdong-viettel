@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Hợp Đồng - My Viettel iPhone 17 Pro Max</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        viettel: '#EE0033',
+                        'viettel-dark': '#C4002A',
+                        'viettel-light': '#FFF0F2',
+                        'ios-bg': '#F2F2F7',
+                    },
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                    fontSize: {
+                        'xs': ['13px', '18px'], // Nhỉnh hơn xs mặc định một chút cho dễ đọc
+                        'sm': ['14.5px', '20px'],
+                        'base': ['16px', '24px'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .iphone-frame {
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 12px #2d2d2d, 0 0 0 14px #4a4a4a;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
+        }
+        .badge-pulse {
+            animation: pulse-subtle 2s infinite ease-in-out;
+        }
+
+        /* Custom scrollbar for PDF Viewer */
+        .pdf-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .pdf-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .pdf-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #94a3b8;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex flex-col items-center justify-center p-2 sm:p-6 font-sans">
+
+
+    <!-- Container Mô phỏng iPhone 17 Pro Max -->
+    <div class="relative w-full max-w-[420px] h-[880px] bg-black rounded-[54px] iphone-frame overflow-hidden flex flex-col justify-between border-4 border-slate-700">
+        
+        <!-- Dynamic Island -->
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-[125px] h-[32px] bg-black rounded-full z-50 flex items-center justify-between px-2.5 cursor-pointer hover:w-[160px] transition-all duration-300 shadow-md">
+            <div class="w-3.5 h-3.5 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center">
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-900"></div>
+            </div>
+            <div id="dynamic-island-content" class="flex items-center space-x-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[10px] text-white font-medium tracking-tight">Viettel 5G</span>
+            </div>
+        </div>
+
+        <!-- iOS Status Bar -->
+        <div class="w-full pt-3 px-7 pb-1 flex justify-between items-center text-white text-xs font-semibold z-40 select-none">
+            <span class="pl-1">09:16</span>
+            <div class="flex items-center space-x-1.5 pr-1">
+                <i data-lucide="signal" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-[10px] font-bold">5G</span>
+                <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
+                <div class="flex items-center bg-white/20 rounded-md px-1 py-0.5 border border-white/40">
+                    <span class="text-[9px] font-bold mr-0.5">89</span>
+                    <div class="w-2.5 h-1.5 bg-emerald-400 rounded-sm"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN APP CONTENT AREA -->
+        <div class="relative flex-1 overflow-y-auto no-scrollbar bg-ios-bg text-slate-800 pb-16">
+            
+            <!-- SCREEN 1: HOME PAGE -->
+            <div id="screen-home" class="transition-all duration-300">
+                
+                <!-- Red Header Gradient Background -->
+                <div class="bg-gradient-to-br from-[#EE0033] via-[#E0002E] to-[#FF3B5C] pt-2 pb-14 px-4 rounded-b-[28px] text-white shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                    
+                    <!-- Customer Header Info -->
+                    <div class="flex justify-between items-start mb-3 pt-1">
+                        <div>
+                            <h1 class="text-lg font-extrabold tracking-wide uppercase flex items-center gap-1.5">
+                                PHẠM THỊ THANH PHƯƠNG
+                            </h1>
+                            <div class="mt-1 inline-flex items-center space-x-1 bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[11px] font-medium border border-white/30">
+                                <i data-lucide="plus-circle" class="w-3 h-3 text-pink-200"></i>
+                                <span>Hội viên Thân Thiết</span>
+                                <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                            </div>
+                        </div>
+                        <button class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition">
+                            <i data-lucide="search" class="w-4 h-4 text-white"></i>
+                        </button>
+                    </div>
+
+                    <!-- Category Tab Switcher -->
+                    <div class="flex justify-between items-center bg-black/15 p-1 rounded-full text-xs font-semibold border border-white/10 mt-4">
+                        <button class="flex-1 py-1.5 px-2 rounded-full text-center text-white/80 hover:text-white transition">
+                            <i data-lucide="smartphone" class="w-3.5 h-3.5 inline mr-1"></i>Di động
+                        </button>
+                        <button class="flex-1 py-1.5 px-2 rounded-full text-center bg-white text-viettel font-bold shadow-md transition">
+                            <i data-lucide="home" class="w-3.5 h-3.5 inline mr-1"></i>Internet
+                        </button>
+                        <button class="flex-1 py-1.5 px-2 rounded-full text-center text-white/80 hover:text-white transition">
+                            <i data-lucide="video" class="w-3.5 h-3.5 inline mr-1"></i>Camera
+                        </button>
+                        <button class="flex-1 py-1.5 px-2 rounded-full text-center text-white/80 hover:text-white transition">
+                            <i data-lucide="tv" class="w-3.5 h-3.5 inline mr-1"></i>TV360
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Subscriber Card Container -->
+                <div class="px-4 -mt-10 relative z-10">
+                    <div class="bg-white rounded-2xl p-4 shadow-xl border border-slate-100">
+                        <div class="flex justify-between items-start border-b border-slate-100 pb-3">
+                            <div>
+                                <div class="text-xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+                                    0989 858 785
+                                    <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md font-semibold">Đang hoạt động</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">Phường Hoàng Liệt, Thành phố Hà Nội</p>
+                            </div>
+                        </div>
+
+                        <!-- Package Info Grid -->
+                        <div class="grid grid-cols-2 gap-3 py-3 border-b border-slate-100 relative">
+                            <div class="absolute left-1/2 top-3 bottom-3 border-r border-dashed border-slate-200"></div>
+                            <div>
+                                <span class="text-[11px] text-slate-400 font-medium">Gói cước</span>
+                                <div class="text-sm font-black text-slate-800 mt-0.5">SUPERNET1</div>
+                                <div class="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
+                                    <span>Tốc độ</span>
+                                    <span class="font-bold text-slate-700">300 Mbps</span>
+                                </div>
+                            </div>
+                            <div class="pl-3">
+                                <span class="text-[11px] text-slate-400 font-medium">Giá gói</span>
+                                <div class="text-sm font-black text-viettel mt-0.5">265.000đ</div>
+                                <button class="text-[11px] text-viettel font-semibold flex items-center gap-0.5 mt-0.5 hover:underline">
+                                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> Đổi gói
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bill & Actions -->
+                        <div class="pt-3 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-slate-500">Cước phải trả</span>
+                                <div class="flex items-center gap-1.5 mt-0.5">
+                                    <span class="text-sm font-extrabold text-slate-800">*********đ</span>
+                                    <i data-lucide="eye-off" class="w-3.5 h-3.5 text-slate-400 cursor-pointer"></i>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="px-4 py-2 bg-pink-50 text-viettel text-xs font-bold rounded-full hover:bg-pink-100 transition">
+                                    Tra cước
+                                </button>
+                                <button class="px-4 py-2 bg-viettel text-white text-xs font-bold rounded-full shadow-md shadow-red-200 hover:bg-viettel-dark transition">
+                                    Thanh toán
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button Quản lý tài khoản -->
+                    <div class="mt-3 text-center">
+                        <button class="inline-flex items-center gap-2 bg-white px-5 py-2.5 rounded-full text-xs font-bold text-slate-700 shadow-sm border border-slate-200 hover:bg-slate-50 transition">
+                            <i data-lucide="user-cog" class="w-4 h-4 text-viettel"></i>
+                            Quản lý tài khoản
+                        </button>
+                    </div>
+
+                    <!-- CONTRACT SEARCH SHORTCUT ICON -->
+                    <div class="mt-4 bg-white rounded-2xl p-4 shadow-md border border-slate-100">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-viettel"></i>
+                                Tiện ích Hợp đồng & Pháp lý
+                            </h3>
+                            <span class="text-[10px] bg-red-100 text-viettel font-bold px-2 py-0.5 rounded-full">MỚI</span>
+                        </div>
+
+                        <!-- Menu Grid -->
+                        <div class="grid grid-cols-4 gap-2">
+                            <button onclick="navigateToContractScreen()" class="group flex flex-col items-center text-center p-2 rounded-xl hover:bg-red-50/60 transition relative">
+                                <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-viettel"></span>
+                                </span>
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-viettel to-rose-500 text-white flex items-center justify-center shadow-lg shadow-red-200 group-hover:scale-105 transition duration-200">
+                                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-slate-800 mt-1.5 group-hover:text-viettel transition">Tra cứu hợp đồng</span>
+                            </button>
+
+                            <button class="flex flex-col items-center text-center p-2 rounded-xl hover:bg-slate-50 transition">
+                                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+                                    <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-600 mt-1.5">Ký số MySign</span>
+                            </button>
+
+                            <button class="flex flex-col items-center text-center p-2 rounded-xl hover:bg-slate-50 transition">
+                                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+                                    <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-600 mt-1.5">Nghiệm thu</span>
+                            </button>
+
+                            <button class="flex flex-col items-center text-center p-2 rounded-xl hover:bg-slate-50 transition">
+                                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
+                                    <i data-lucide="repeat" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-600 mt-1.5">Đổi dịch vụ</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Support Staff Banner -->
+                    <div class="mt-4 bg-white rounded-2xl p-3.5 shadow-sm border border-slate-100 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-viettel">
+                                <i data-lucide="headphones" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-extrabold text-slate-800">Nhân viên hỗ trợ của Bạn</h4>
+                                <p class="text-[11px] text-slate-500">Đội ngũ kỹ thuật viên khu vực Hà Nội</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SCREEN 2: CONTRACT SEARCH SCREEN -->
+            <div id="screen-contract" class="hidden transition-all duration-300">
+                
+                <!-- Navbar Header -->
+                <div class="sticky top-0 bg-white/95 backdrop-blur-md z-30 border-b border-slate-200 px-4 py-3 flex items-center justify-between shadow-sm">
+                    <button onclick="navigateToHomeScreen()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-slate-200 transition">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <div class="text-center">
+                        <h2 class="text-sm font-extrabold text-slate-900">Tra cứu Hợp đồng & Hồ sơ</h2>
+                        <p class="text-[10px] text-slate-500">Quản lý chứng từ điện tử Viettel</p>
+                    </div>
+                    <!-- Spacer để giữ tiêu đề ở chính giữa -->
+                    <div class="w-8 h-8"></div>
+                </div>
+
+                <div class="p-4 space-y-4">
+                    
+                    <!-- SUBSCRIBER SELECTOR -->
+                    <div class="bg-white rounded-2xl p-3.5 shadow-md border border-slate-200 space-y-3">
+                        <div>
+                            <label class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                                Chọn tài khoản
+                            </label>
+                            <div class="relative">
+                                <div onclick="document.getElementById('account-modal').classList.remove('hidden')" class="w-full bg-slate-50 border border-slate-200 text-slate-900 text-xs font-bold rounded-xl p-3 flex justify-between items-center cursor-pointer">
+                                    <span id="selected-account-text">Di động trả sau_0988 123 456</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contract Number Summary Box -->
+                        <div id="contract-summary-box" class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs">
+                            <div>
+                                <span class="text-slate-400">Mã hợp đồng:</span>
+                                <span id="contract-number-text" class="font-extrabold text-slate-800 ml-1">88572102</span>
+                            </div>
+                            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <i data-lucide="check-circle-2" class="w-3 h-3"></i> Đã xác minh
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH OTHER FORM -->
+                    <div id="other-search-form" class="hidden space-y-3">
+                        
+                        <!-- Card 1: Thông tin tra cứu -->
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200">
+                            <h3 class="text-[13px] font-bold text-slate-900 mb-3">Thông tin tra cứu</h3>
+                            
+                            <div class="space-y-3 mb-4">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="searchType" value="Mã hợp đồng" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" checked onchange="updateSearchPlaceholder(this.value)">
+                                    <span class="text-xs font-bold text-slate-700">Mã hợp đồng</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="searchType" value="Số thuê bao" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
+                                    <span class="text-xs font-bold text-slate-700">Số thuê bao</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="searchType" value="CCCD" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
+                                    <span class="text-xs font-bold text-slate-700">CCCD</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="searchType" value="SĐT liên hệ" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
+                                    <span class="text-xs font-bold text-slate-700">SĐT liên hệ</span>
+                                </label>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div>
+                                    <input type="text" id="other-input" oninput="checkFormValid()" class="w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-3.5 text-xs text-slate-800 focus:ring-1 focus:ring-viettel focus:border-viettel outline-none placeholder-slate-400" placeholder="Nhập mã hợp đồng *">
+                                </div>
+                                
+                                <div class="relative">
+                                    <!-- Use a pseudo-button for the date picker look from the design -->
+                                    <div class="w-full bg-slate-50/50 border border-slate-200 rounded-xl py-3 px-3.5 flex justify-between items-center cursor-pointer" onclick="document.getElementById('hidden-months').classList.toggle('hidden')">
+                                        <span class="text-xs text-slate-500">Chọn tháng tra cứu <span class="text-red-500">*</span></span>
+                                        <i data-lucide="calendar" class="w-4 h-4 text-slate-500"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Hidden month inputs that were implemented previously -->
+                                <div id="hidden-months" class="hidden grid grid-cols-2 gap-3 mt-2 p-2 bg-slate-50 rounded-xl border border-slate-100">
+                                    <div>
+                                        <label class="text-[10px] font-bold text-slate-500 block mb-1">Từ tháng</label>
+                                        <input type="month" id="month-from" class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="text-[10px] font-bold text-slate-500 block mb-1">Đến tháng</label>
+                                        <input type="month" id="month-to" class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs focus:outline-none">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Hướng dẫn -->
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200">
+                            <h3 class="text-[13px] font-bold text-slate-900 mb-3">Hướng dẫn</h3>
+                            <div class="text-[11px] text-slate-600 space-y-2 leading-relaxed">
+                                <div class="flex items-start gap-1.5">
+                                    <span class="mt-0.5">•</span>
+                                    <span>Bạn nhập 1 trong các thông tin sau để tra cứu thông tin hợp đồng:</span>
+                                </div>
+                                <div class="pl-4 space-y-1.5 text-[10.5px]">
+                                    <div><b>1. Mã hợp đồng:</b> Mã hợp đồng DV di động trả sau hoặc DV Internet.</div>
+                                    <div><b>2. Số thuê bao:</b> Số di động trả sau hoặc mã tài khoản DV Internet.</div>
+                                    <div><b>3. CCCD:</b> Số căn cước công dân hòa mạng DV di động hoặc DV Internet.</div>
+                                    <div><b>4. Số liên hệ:</b> Số điện thoại đăng ký trên hợp đồng Internet.</div>
+                                </div>
+                                <div class="flex items-start gap-1.5 pt-1">
+                                    <span class="mt-0.5">•</span>
+                                    <span>Chọn <b>kỳ cước</b> cần tra cứu.</span>
+                                </div>
+                                <div class="flex items-start gap-1.5">
+                                    <span class="mt-0.5">•</span>
+                                    <span>Xác thực <b>OTP</b>.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="pt-2">
+                            <button onclick="handleSearchOther()" id="btn-search-other" disabled class="w-full py-3 bg-slate-200 text-slate-400 text-xs font-bold rounded-full transition-colors">
+                                Lấy thông tin tra cứu
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- OTP FORM -->
+                    <div id="otp-form" class="hidden bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center space-y-4">
+                        <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-sm font-black text-slate-800">Xác thực OTP</h3>
+                        <p class="text-[11px] text-slate-500 px-2 leading-relaxed">
+                            Mã xác thực đã được gửi về số điện thoại <b class="text-slate-700">098***888</b>. Vui lòng nhập mã để xem hồ sơ.
+                        </p>
+                        <div class="flex justify-center gap-2.5 my-3">
+                            <input type="text" maxlength="1" class="w-10 h-10 text-center text-lg font-black border border-slate-200 rounded-xl focus:border-viettel focus:ring-2 focus:ring-viettel outline-none">
+                            <input type="text" maxlength="1" class="w-10 h-10 text-center text-lg font-black border border-slate-200 rounded-xl focus:border-viettel focus:ring-2 focus:ring-viettel outline-none">
+                            <input type="text" maxlength="1" class="w-10 h-10 text-center text-lg font-black border border-slate-200 rounded-xl focus:border-viettel focus:ring-2 focus:ring-viettel outline-none">
+                            <input type="text" maxlength="1" class="w-10 h-10 text-center text-lg font-black border border-slate-200 rounded-xl focus:border-viettel focus:ring-2 focus:ring-viettel outline-none">
+                        </div>
+                        <button onclick="handleVerifyOTP()" class="w-full py-2.5 bg-viettel text-white text-xs font-bold rounded-xl shadow-md shadow-red-200 hover:bg-viettel-dark transition">
+                            Xác nhận
+                        </button>
+                        <p class="text-[10px] text-slate-400 mt-2">Gửi lại mã sau <span class="text-viettel font-bold">59s</span></p>
+                    </div>
+
+                    <!-- STANDARD VIEW CONTAINER -->
+                    <div id="standard-view" class="space-y-4">
+                        <!-- Search Input -->
+                        <div class="relative">
+                            <input type="text" id="document-search" oninput="filterDocuments()" placeholder="Tìm tên chứng từ, mã biên bản, phụ lục..." class="w-full bg-white border border-slate-200 rounded-xl py-2.5 pl-9 pr-4 text-xs font-medium placeholder-slate-400 shadow-sm focus:outline-none focus:border-viettel">
+                            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                        </div>
+
+                        <!-- CATEGORY FILTER TABS -->
+                        <div class="flex space-x-1.5 overflow-x-auto overflow-y-hidden no-scrollbar py-1 scroll-smooth snap-x">
+                            <button onclick="filterCategory('all')" class="cat-btn active border px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap bg-viettel text-white border-viettel shadow-sm shrink-0 snap-start">
+                                Tất cả (<span id="count-all">0</span>)
+                            </button>
+                            <button onclick="filterCategory('hd')" class="cat-btn border px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start">
+                                Hợp đồng
+                            </button>
+                            <button onclick="filterCategory('pl')" class="cat-btn border px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start">
+                                Phụ lục
+                            </button>
+                            <button onclick="filterCategory('pyc')" class="cat-btn border px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start">
+                                Phiếu YC
+                            </button>
+                            <button onclick="filterCategory('dlcn')" class="cat-btn border px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start">
+                                Xử lý dữ liệu cá nhân
+                            </button>
+                            <button onclick="filterCategory('bb')" class="cat-btn border px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start">
+                                Nghiệm thu
+                            </button>
+                            <!-- Thêm khoảng trống padding cuối để vuốt mượt mà không bị lẹm -->
+                            <div class="w-1 shrink-0"></div>
+                        </div>
+
+                        <!-- DOCUMENT LIST CONTAINER -->
+                        <div id="document-list" class="space-y-3">
+                            <!-- JS renders document cards here -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!-- END OF MAIN APP CONTENT AREA -->
+
+        <!-- ACCOUNT SELECTION BOTTOM SHEET MODAL -->
+        <div id="account-modal" class="hidden absolute inset-0 z-[60] flex flex-col justify-end">
+                <!-- Backdrop -->
+                <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="document.getElementById('account-modal').classList.add('hidden')"></div>
+                
+                <!-- Bottom Sheet Content -->
+                <div class="bg-white w-full rounded-t-[28px] p-5 relative z-10 animate-slide-up flex flex-col">
+                    <!-- Drag Handle -->
+                    <div class="w-10 h-1 bg-slate-300 rounded-full mx-auto mb-4"></div>
+                    
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-[15px] font-bold text-slate-900">Chọn tài khoản</h3>
+                        <button onclick="document.getElementById('account-modal').classList.add('hidden')" class="text-slate-500">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Options List -->
+                    <div class="overflow-y-auto no-scrollbar space-y-5 mb-6 max-h-[60vh]">
+                        <!-- Mobile Prepaid -->
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="radio" name="accountSelect" value="mobile_prepaid" class="w-[18px] h-[18px] mt-0.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                            <div class="flex-1">
+                                <div class="text-[13px] font-bold text-slate-900">Di động trả trước_0986 668 888</div>
+                            </div>
+                        </label>
+                        
+                        <!-- Mobile Postpaid -->
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="radio" name="accountSelect" value="mobile_postpaid" class="w-[18px] h-[18px] mt-0.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel" checked>
+                            <div class="flex-1">
+                                <div class="text-[13px] font-bold text-slate-900">Di động trả sau_0988 123 456</div>
+                            </div>
+                        </label>
+
+                        <!-- Internet -->
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="radio" name="accountSelect" value="ftth" class="w-[18px] h-[18px] mt-0.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                            <div class="flex-1">
+                                <div class="text-[13px] font-bold text-slate-900 mb-0.5">Internet_0989 858 785</div>
+                                <div class="text-[11px] text-slate-500 leading-snug">
+                                    Mã hợp đồng: 88572102<br>
+                                    P33 tầng 3 Ngõ 67 Vạn Bảo Tổ 25, Ngọc Hà, Hà Nội
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- TV360 -->
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="radio" name="accountSelect" value="tv" class="w-[18px] h-[18px] mt-0.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                            <div class="flex-1">
+                                <div class="text-[13px] font-bold text-slate-900 mb-0.5">TV360_0989 858 785</div>
+                                <div class="text-[11px] text-slate-500 leading-snug">
+                                    Mã hợp đồng: 88572102<br>
+                                    Số nhà 27 ngõ 18 ngách 12/5 đường Minh Khai, phường Thanh Nhàn, Hà Nội
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Camera -->
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="radio" name="accountSelect" value="camera" class="w-[18px] h-[18px] mt-0.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                            <div class="flex-1">
+                                <div class="text-[13px] font-bold text-slate-900 mb-0.5">Camera_0989 858 785</div>
+                                <div class="text-[11px] text-slate-500 leading-snug">
+                                    Mã hợp đồng: 88572102<br>
+                                    Số nhà 27 ngõ 18 ngách 12/5 đường Minh Khai, phường Thanh Nhàn, Hà Nội
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- Other -->
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="radio" name="accountSelect" value="other" class="w-[18px] h-[18px] mt-0.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                            <div class="flex-1">
+                                <div class="text-[13px] font-bold text-slate-900 mt-0.5">Tài khoản khác</div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <!-- Action Button -->
+                    <button onclick="confirmAccountSelection()" class="w-full py-4 bg-[#111111] text-white text-[13px] font-bold rounded-[20px] transition hover:bg-black">
+                        Tra hợp đồng
+                    </button>
+                    <!-- iOS Home Indicator -->
+                    <div class="w-[35%] h-[5px] bg-slate-800 rounded-full mx-auto mt-5"></div>
+                </div>
+            </div>
+
+        <!-- BOTTOM NAVIGATION BAR -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 flex justify-between items-center z-40">
+            <button onclick="navigateToHomeScreen()" class="flex flex-col items-center text-viettel">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+                <span class="text-[10px] font-bold mt-1">Trò chuyện</span>
+            </button>
+            <button class="flex flex-col items-center text-slate-400 hover:text-slate-700">
+                <i data-lucide="grid" class="w-5 h-5"></i>
+                <span class="text-[10px] font-medium mt-1">Dịch vụ</span>
+            </button>
+            
+            <button onclick="navigateToHomeScreen()" class="flex flex-col items-center -mt-5">
+                <div class="w-12 h-12 rounded-full bg-viettel text-white font-black text-lg flex items-center justify-center shadow-lg border-2 border-white shadow-red-300">
+                    V
+                </div>
+                <span class="text-[10px] font-extrabold text-viettel mt-0.5">My Viettel</span>
+            </button>
+
+            <button class="flex flex-col items-center text-slate-400 hover:text-slate-700">
+                <i data-lucide="users" class="w-5 h-5"></i>
+                <span class="text-[10px] font-medium mt-1">Gia đình</span>
+            </button>
+            <button onclick="navigateToContractScreen()" class="flex flex-col items-center text-slate-400 hover:text-viettel">
+                <i data-lucide="file-check" class="w-5 h-5"></i>
+                <span class="text-[10px] font-medium mt-1">Hợp đồng</span>
+            </button>
+        </div>
+
+        <!-- iPhone Home Bar -->
+        <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-800 rounded-full z-50"></div>
+
+        <!-- MODAL POPUP: PDF DOCUMENT VIEWER -->
+        <div id="pdf-modal" class="absolute inset-0 bg-black/70 backdrop-blur-sm z-[70] hidden flex items-center justify-center px-4 py-12">
+            <div class="bg-white w-full h-full rounded-[28px] flex flex-col overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+            
+            <!-- Modal Header -->
+            <div class="bg-[#151b2c] text-white px-4 py-3.5 flex justify-between items-center">
+                <div class="flex items-center space-x-2.5">
+                    <div class="w-8 h-8 rounded-[10px] bg-viettel flex items-center justify-center text-white text-[11px] font-black tracking-wider">
+                        PDF
+                    </div>
+                    <div>
+                        <h3 id="modal-doc-title" class="text-xs font-bold truncate max-w-[210px]">Phiếu yêu cầu Trả trước (Đăng ký...</h3>
+                        <p id="modal-doc-code" class="text-[9px] text-slate-300 font-medium">Mã VB: PYC-TT/0986668888-2023</p>
+                    </div>
+                </div>
+                <button onclick="closePdfModal()" class="w-8 h-8 rounded-full bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white flex items-center justify-center transition">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- PDF Viewer Content Simulation -->
+            <div class="flex-1 overflow-y-auto pdf-scrollbar bg-slate-100/50 p-3 font-serif text-slate-800 text-xs">
+                <div class="bg-white p-5 shadow-sm rounded-xl border border-slate-200/60 min-h-[550px] relative">
+                    
+                    <div class="flex justify-between items-start border-b-2 border-viettel pb-3 mb-4">
+                        <div>
+                            <div class="text-viettel font-black text-base tracking-wider">VIETTEL TELECOM</div>
+                            <div class="text-[9px] font-sans text-slate-500">TẬP ĐOÀN CÔNG NGHIỆP - VIỄN THÔNG QUÂN ĐỘI</div>
+                        </div>
+                        <div class="text-right text-[9px] font-sans text-slate-500">
+                            <div class="font-bold text-slate-700">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</div>
+                            <div>Độc lập - Tự do - Hạnh phúc</div>
+                            <div class="text-slate-400 italic">Hà Nội, ngày 15 tháng 10 năm 2022</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center font-sans my-4">
+                        <h2 id="modal-pdf-heading" class="font-extrabold text-sm uppercase text-slate-900">
+                            HỢP ĐỒNG CUNG CẤP VÀ SỬ DỤNG DỊCH VỤ BĂNG RỘNG CỐ ĐỊNH
+                        </h2>
+                        <p id="modal-pdf-subheading" class="text-[10px] text-slate-500 font-mono mt-0.5">Số: 0989858785/2022/HĐ-VT</p>
+                    </div>
+
+                    <div class="font-sans space-y-2 text-[11px] my-3">
+                        <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                            <span class="font-bold text-slate-700">BÊN A (Bên sử dụng dịch vụ):</span>
+                            <div class="grid grid-cols-2 gap-1 mt-1 text-[10px]">
+                                <div>Khách hàng: <b class="text-slate-900">PHẠM THỊ THANH PHƯƠNG</b></div>
+                                <div>Số ĐT liên hệ: <b>0989 858 785</b></div>
+                                <div class="col-span-2">Địa chỉ lắp đặt: <b>Phường Hoàng Liệt, Quận Hoàng Mai, Hà Nội</b></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                            <span class="font-bold text-slate-700">BÊN B (Bên cung cấp dịch vụ):</span>
+                            <div class="text-[10px] mt-1">
+                                <div><b>TẬP ĐOÀN CÔNG NGHIỆP - VIỄN THÔNG QUÂN ĐỘI (VIETTEL)</b></div>
+                                <div>Đại diện: Tổng Công ty Viễn thông Viettel - Chi nhánh Hà Nội</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="font-sans text-[10px] space-y-2 text-slate-600 leading-relaxed my-4">
+                        <p class="font-bold text-slate-800">ĐIỀU 1: NỘI DUNG DỊCH VỤ VÀ NĂNG LỰC CUNG CẤP</p>
+                        <p>- Loại dịch vụ: Internet Cáp quang / Di động Trả sau / Truyền hình / Camera An ninh Viettel.</p>
+                        <p>- Tốc độ & Chuẩn kết nối: Băng thông cao, kết nối thời gian thực 24/7.</p>
+                        <p>- Cước phí thuê bao tháng: Được thể hiện chi tiết trên từng phụ lục đăng ký.</p>
+                        
+                        <p class="font-bold text-slate-800 pt-2">ĐIỀU 2: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</p>
+                        <p>- Bên B cam kết duy trì chất lượng dịch vụ 24/7 theo đúng tiêu chuẩn kỹ thuật.</p>
+                        <p>- Bên A có nghĩa vụ thanh toán cước phí đúng hạn hàng tháng theo quy định.</p>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-slate-200 grid grid-cols-2 gap-4 text-center font-sans">
+                        <div>
+                            <div class="text-[10px] font-bold text-slate-700">ĐẠI DIỆN BÊN A</div>
+                            <div class="text-[9px] text-slate-400 italic">Khách hàng đã ký xác nhận điện tử</div>
+                            <div class="mt-3 inline-block bg-emerald-50 border border-emerald-300 rounded px-2 py-1 text-emerald-700 text-[9px] font-bold">
+                                <i data-lucide="check-circle" class="w-3 h-3 inline"></i> ĐÃ KÝ OTP / EKYC
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="text-[10px] font-bold text-slate-700">ĐẠI DIỆN BÊN B</div>
+                            <div class="mt-1 relative inline-block">
+                                <div class="w-20 h-20 border-2 border-red-600 border-dashed rounded-full flex items-center justify-center p-1 opacity-80 rotate-[-12deg] mx-auto">
+                                    <div class="w-full h-full border border-red-600 rounded-full flex flex-col items-center justify-center text-[7px] text-red-600 font-bold uppercase leading-none text-center">
+                                        <span>★ VIETTEL ★</span>
+                                        <span class="text-[6px] my-0.5">KÝ BỞI: CHI NHÁNH HÀ NỘI</span>
+                                        <span class="text-[5px]">MySign Confirmed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-2 left-4 right-4 flex justify-between items-end text-[8px] font-mono text-slate-400 border-t border-slate-100 pt-1">
+                        <span>Xác thực văn bản tại: myviettel.vn/verify</span>
+                        <span>Mã Hash: 8F99-A12B-3C4D-2022</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Action Footer -->
+            <div class="bg-white px-4 py-3.5 flex gap-2.5 rounded-b-[28px] border-t border-slate-100">
+                <button onclick="alert('Đã tải xuống văn bản PDF thành công về máy!')" class="flex-1 bg-[#ff0033] text-white py-3 rounded-xl font-bold text-[13px] flex items-center justify-center gap-1.5 shadow hover:bg-viettel-dark transition">
+                    <i data-lucide="download" class="w-4 h-4"></i> Tải về máy (PDF)
+                </button>
+                <button onclick="alert('Liên kết chia sẻ đã được chép vào bộ nhớ tạm!')" class="px-5 bg-[#f1f5f9] text-slate-700 py-3 rounded-xl font-bold text-[13px] flex items-center justify-center gap-1.5 hover:bg-slate-200 transition">
+                    <i data-lucide="share-2" class="w-4 h-4"></i> Chia sẻ
+                </button>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- END OF MOBILE DEVICE FRAME CONTAINER -->
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        function toggleHistoryLog() {
+            alert("Lịch sử thao tác xem trước:\n- 09:16:10 - Xem giao diện Trang chủ My Viettel\n- 09:16:15 - Chọn tra cứu thuê bao FTTH Cố định\n- 09:16:22 - Xem trước Hợp đồng cung cấp dịch vụ (PDF)");
+        }
+
+        // Action options list according to Viettel business requirements
+        const actionOptions = {
+            fixed: [
+                { value: "all", label: "-- Tất cả tác động Cố định --" },
+                { value: "dau_noi_moi", label: "Đấu nối mới" },
+                { value: "chuyen_doi_cong_nghe", label: "Chuyển đổi công nghệ" },
+                { value: "chuyen_chu_quyen", label: "Chuyển chủ quyền" }
+            ],
+            mobile: [
+                { value: "all", label: "-- Tất cả tác động Di động --" },
+                { value: "dk_thong_tin", label: "Đăng ký thông tin" },
+                { value: "dau_noi_tt", label: "Đấu nối thuê bao trả trước" },
+                { value: "dau_noi_ts", label: "Đấu nối thuê bao trả sau" },
+                { value: "chuyen_tt_sang_ts", label: "Chuyển trả trước sang trả sau" },
+                { value: "chuyen_ts_sang_tt", label: "Chuyển trả sau sang trả trước" },
+                { value: "chuyen_nhuong_hd", label: "Chuyển nhượng hợp đồng" },
+                { value: "thay_doi_tt_hd", label: "Thay đổi thông tin hợp đồng" },
+                { value: "doi_sim", label: "Đổi SIM" },
+                { value: "thay_doi_tt_kh", label: "Thay đổi thông tin khách hàng" },
+                { value: "chuan_hoa_tt", label: "Chuẩn hóa thông tin" },
+                { value: "chuyen_nhuong_tb_tt", label: "Chuyển nhượng thuê bao TT" },
+                { value: "sua_sai_tt_kh", label: "Sửa sai thông tin khách hàng" },
+                { value: "chan_1_chieu", label: "Chặn 1 chiều" },
+                { value: "tach_gop_hd", label: "Tách/gộp hợp đồng" }
+            ]
+        };
+
+        // Complete document mock database
+        const documentsData = {
+            ftth: [
+                {
+                    id: "DOC-F01",
+                    cat: "hd",
+                    action: "dau_noi_moi",
+                    title: "Hợp đồng Cung cấp & Sử dụng Dịch vụ Cố định FTTH",
+                    code: "0989858785/2022/HĐ-VT",
+                    date: "15/10/2022",
+                    status: "Đang hiệu lực",
+                    statusColor: "emerald",
+                    typeText: "Hợp đồng gốc",
+                    desc: "Hợp đồng cáp quang băng rộng cố định Viettel SuperNet1 300Mbps",
+                    pdfTitle: "HỢP ĐỒNG CUNG CẤP VÀ SỬ DỤNG DỊCH VỤ CỐ ĐỊNH"
+                },
+                {
+                    id: "DOC-F02",
+                    cat: "pl",
+                    action: "chuyen_doi_cong_nghe",
+                    title: "Phụ lục Hợp đồng - Nâng cấp WiFi Mesh 6 & Băng thông 300Mbps",
+                    code: "PL-2023/SN1-300M",
+                    date: "20/05/2023",
+                    status: "Đã ký MySign",
+                    statusColor: "blue",
+                    typeText: "Phụ lục hợp đồng",
+                    desc: "Phụ lục chuyển đổi công nghệ ONT ZTE sang Home WiFi Mesh 6",
+                    pdfTitle: "PHỤ LỤC THAY ĐỔI TỐC ĐỘ VÀ THIẾT BỊ INTERNET"
+                },
+                {
+                    id: "DOC-F03",
+                    cat: "dlcn",
+                    action: "dau_noi_moi",
+                    title: "Bản xác nhận Xử lý Dữ liệu Cá nhân (Nghị định 13/2023/NĐ-CP)",
+                    code: "XNDLCN-2022/FTTH-8857",
+                    date: "15/10/2022",
+                    status: "Đã xác nhận eKYC",
+                    statusColor: "emerald",
+                    typeText: "Bản xác nhận dữ liệu",
+                    desc: "Đồng ý cho phép Viettel xử lý dữ liệu cá nhân phục vụ cung cấp dịch vụ cố định",
+                    pdfTitle: "BẢN XÁC NHẬN CHẤP THUẬN XỬ LÝ DỮ LIỆU CÁ NHÂN"
+                },
+                {
+                    id: "DOC-F04",
+                    cat: "pyc",
+                    action: "chuyen_chu_quyen",
+                    title: "Phiếu yêu cầu Chuyển chủ quyền & Thay đổi thông tin Cố định",
+                    code: "PYC-CCQ/2024-0012",
+                    date: "05/01/2024",
+                    status: "Đã duyệt",
+                    statusColor: "emerald",
+                    typeText: "Phiếu yêu cầu thay đổi",
+                    desc: "Chuyển quyền sử dụng chủ thể hợp đồng tại P. Hoàng Liệt, Hà Nội",
+                    pdfTitle: "PHIẾU YÊU CẦU THAY ĐỔI THÔNG TIN HỢP ĐỒNG CỐ ĐỊNH"
+                },
+                {
+                    id: "DOC-F05",
+                    cat: "bb",
+                    action: "dau_noi_moi",
+                    title: "Biên bản Nghiệm thu Bàn giao Thiết bị Cố định ONT & Mesh",
+                    code: "BBNT-2022/FTTH-8857",
+                    date: "15/10/2022",
+                    status: "Hoàn thành",
+                    statusColor: "emerald",
+                    typeText: "Biên bản nghiệm thu",
+                    desc: "Biên bản bàn giao 01 Moden ONT ZTE + 02 AP Mesh Wifi",
+                    pdfTitle: "BIÊN BẢN NGHIỆM THU VÀ BÀN GIAO THIẾT BỊ CỐ ĐỊNH"
+                }
+            ],
+            mobile_prepaid: [
+                {
+                    id: "DOC-MP01",
+                    cat: "hd",
+                    action: "dau_noi_tt",
+                    title: "Hợp đồng Mobile Trả trước Viettel Telecom",
+                    code: "HĐ-MOBI-TT/0986668888",
+                    date: "12/03/2023",
+                    status: "Đang hoạt động",
+                    statusColor: "emerald",
+                    typeText: "Hợp đồng Mobile Trả trước",
+                    desc: "Hợp đồng sử dụng dịch vụ viễn thông di động trả trước chính chủ",
+                    pdfTitle: "HỢP ĐỒNG CUNG CẤP DỊCH VỤ DI ĐỘNG TRẢ TRƯỚC"
+                },
+                {
+                    id: "DOC-MP02",
+                    cat: "pyc",
+                    action: "dk_thong_tin",
+                    title: "Phiếu yêu cầu Trả trước (Đăng ký / Chuẩn hóa thông tin chính chủ)",
+                    code: "PYC-TT/0986668888-2023",
+                    date: "12/03/2023",
+                    status: "Đã duyệt eKYC",
+                    statusColor: "emerald",
+                    typeText: "Phiếu yêu cầu trả trước",
+                    desc: "Đăng ký thông tin thuê bao di động trả trước kèm ảnh chân dung & CCCD",
+                    pdfTitle: "PHIẾU YÊU CẦU ĐĂNG KÝ THÔNG TIN THUÊ BAO TRẢ TRƯỚC"
+                },
+                {
+                    id: "DOC-MP03",
+                    cat: "pyc",
+                    action: "chuyen_tt_sang_ts",
+                    title: "Phiếu yêu cầu thay đổi dịch vụ",
+                    code: "PYC-TD-TT/2024-88",
+                    date: "10/01/2024",
+                    status: "Đã xử lý",
+                    statusColor: "blue",
+                    typeText: "Phiếu YC thay đổi dịch vụ",
+                    desc: "Yêu cầu đổi SIM, sửa sai thông tin hoặc chuyển đổi hình thức thuê bao",
+                    pdfTitle: "PHIẾU YÊU CẦU THAY ĐỔI DỊCH VỤ DI ĐỘNG TRẢ TRƯỚC"
+                },
+                {
+                    id: "DOC-MP04",
+                    cat: "dlcn",
+                    action: "dk_thong_tin",
+                    title: "Bản xác nhận Xử lý Dữ liệu Cá nhân (Thuê bao Trả trước)",
+                    code: "XNDLCN-MOBI-TT/0986",
+                    date: "12/03/2023",
+                    status: "Đã xác nhận",
+                    statusColor: "emerald",
+                    typeText: "Bản xác nhận dữ liệu",
+                    desc: "Cam kết bảo mật và cho phép xử lý dữ liệu cá nhân theo NĐ 13/2023/NĐ-CP",
+                    pdfTitle: "BẢN XÁC NHẬN CHẤP THUẬN XỬ LÝ DỮ LIỆU CÁ NHÂN"
+                }
+            ],
+            mobile_postpaid: [
+                {
+                    id: "DOC-MS01",
+                    cat: "hd",
+                    action: "dau_noi_ts",
+                    title: "Hợp đồng Cung cấp Dịch vụ Viễn thông Di động Trả sau",
+                    code: "HD-DIĐONG/0988123456",
+                    date: "10/01/2023",
+                    status: "Đang hiệu lực",
+                    statusColor: "emerald",
+                    typeText: "Hợp đồng gốc",
+                    desc: "Thuê bao di động trả sau chính chủ PHẠM THỊ THANH PHƯƠNG",
+                    pdfTitle: "HỢP ĐỒNG CUNG CẤP DỊCH VỤ DI ĐỘNG TRẢ SAU"
+                },
+                {
+                    id: "DOC-MS02",
+                    cat: "pl",
+                    action: "dau_noi_ts",
+                    title: "Phụ lục Hợp đồng Di động - Gói cước Cam kết V160N",
+                    code: "PL-V160N/2024-01",
+                    date: "10/01/2024",
+                    status: "Đang hiệu lực",
+                    statusColor: "blue",
+                    typeText: "Phụ lục hợp đồng di động",
+                    desc: "Gói V160N: 6GB/ngày, miễn phí gọi nội mạng < 20 phút",
+                    pdfTitle: "PHỤ LỤC GÓI CƯỚC CAM KẾT DI ĐỘNG TRẢ SAU"
+                },
+                {
+                    id: "DOC-MS03",
+                    cat: "pyc",
+                    action: "chuyen_tt_sang_ts",
+                    title: "Phiếu yêu cầu Thay đổi Dịch vụ Trả sau (Chuyển đổi / Thay đổi HĐ)",
+                    code: "PYC-TS/2023-882",
+                    date: "10/01/2023",
+                    status: "Đã duyệt",
+                    statusColor: "emerald",
+                    typeText: "Phiếu YC thay đổi dịch vụ trả sau",
+                    desc: "Phiếu chuyển đổi từ Trả trước sang Trả sau / Thay đổi thông tin khách hàng",
+                    pdfTitle: "PHIẾU YÊU CẦU THAY ĐỔI DỊCH VỤ DI ĐỘNG TRẢ SAU"
+                },
+                {
+                    id: "DOC-MS04",
+                    cat: "dlcn",
+                    action: "dau_noi_ts",
+                    title: "Bản xác nhận Xử lý Dữ liệu Cá nhân (Thuê bao Trả sau)",
+                    code: "XNDLCN-MOBI-TS/0988",
+                    date: "10/01/2023",
+                    status: "Đã ký MySign",
+                    statusColor: "emerald",
+                    typeText: "Bản xác nhận dữ liệu",
+                    desc: "Bản chấp nhận thu thập và xử lý dữ liệu người dùng trả sau theo NĐ 13/2023/NĐ-CP",
+                    pdfTitle: "BẢN XÁC NHẬN CHẤP THUẬN XỬ LÝ DỮ LIỆU CÁ NHÂN"
+                }
+            ],
+            tv: [
+                {
+                    id: "DOC-TV01",
+                    cat: "hd",
+                    action: "dau_noi_moi",
+                    title: "Hợp đồng Dịch vụ Truyền hình TV360 4K Viettel",
+                    code: "0989858785/2023/HĐ-TV360",
+                    date: "10/03/2023",
+                    status: "Đang hiệu lực",
+                    statusColor: "emerald",
+                    typeText: "Hợp đồng gốc",
+                    desc: "Hợp đồng cung cấp dịch vụ truyền hình gói TV360 VIP",
+                    pdfTitle: "HỢP ĐỒNG DỊCH VỤ TRUYỀN HÌNH CỐ ĐỊNH"
+                },
+                {
+                    id: "DOC-TV02",
+                    cat: "dlcn",
+                    action: "dau_noi_moi",
+                    title: "Bản xác nhận Xử lý Dữ liệu Cá nhân (Dịch vụ TV360)",
+                    code: "XNDLCN-TV360/2023",
+                    date: "10/03/2023",
+                    status: "Đã xác nhận",
+                    statusColor: "emerald",
+                    typeText: "Bản xác nhận dữ liệu",
+                    desc: "Xác nhận xử lý thông tin tài khoản TV360 theo Nghị định 13",
+                    pdfTitle: "BẢN XÁC NHẬN CHẤP THUẬN XỬ LÝ DỮ LIỆU CÁ NHÂN"
+                }
+            ],
+            camera: [
+                {
+                    id: "DOC-CAM01",
+                    cat: "hd",
+                    action: "dau_noi_moi",
+                    title: "Hợp đồng Dịch vụ Viettel Home Camera Cloud",
+                    code: "0989858785/2023/HĐ-CAM",
+                    date: "05/08/2023",
+                    status: "Đang hiệu lực",
+                    statusColor: "emerald",
+                    typeText: "Hợp đồng gốc",
+                    desc: "Hợp đồng giám sát camera an ninh Cloud Viettel",
+                    pdfTitle: "HỢP ĐỒNG DỊCH VỤ CAMERA CLOUD"
+                },
+                {
+                    id: "DOC-CAM02",
+                    cat: "dlcn",
+                    action: "dau_noi_moi",
+                    title: "Bản xác nhận Xử lý Dữ liệu Cá nhân (Camera Cloud)",
+                    code: "XNDLCN-CAM/2023",
+                    date: "05/08/2023",
+                    status: "Đã xác nhận",
+                    statusColor: "emerald",
+                    typeText: "Bản xác nhận dữ liệu",
+                    desc: "Bản đồng ý xử lý hình ảnh và dữ liệu lưu trữ đám mây theo NĐ 13/2023/NĐ-CP",
+                    pdfTitle: "BẢN XÁC NHẬN CHẤP THUẬN XỬ LÝ DỮ LIỆU CÁ NHÂN"
+                }
+            ]
+        };
+
+        let currentSubscriber = 'ftth';
+        let currentAction = 'all';
+        let currentCategory = 'all';
+
+        // Initialize contract screen components
+        function initContractScreen() {
+            populateActionDropdown(currentSubscriber);
+            updateDossierRequiredBanner();
+            renderDocuments();
+        }
+
+        // Populate action type dropdown based on subscriber category
+        function populateActionDropdown(subType) {
+            const actionSelect = document.getElementById('action-select');
+            if (!actionSelect) return; // Bỏ qua nếu element đã bị xoá khỏi UI
+            
+            let isMobile = (subType === 'mobile_prepaid' || subType === 'mobile_postpaid');
+            let optionsList = isMobile ? actionOptions.mobile : actionOptions.fixed;
+
+            actionSelect.innerHTML = optionsList.map(opt => `
+                <option value="${opt.value}">${opt.label}</option>
+            `).join('');
+            currentAction = 'all';
+        }
+
+        // Update legal dossier requirements banner
+        function updateDossierRequiredBanner() {
+            const contractNum = document.getElementById('contract-number-text');
+
+            if (currentSubscriber === 'mobile_prepaid') {
+                contractNum.innerText = "27384910";
+            } else if (currentSubscriber === 'mobile_postpaid') {
+                contractNum.innerText = "59203814";
+            } else {
+                contractNum.innerText = "88572102";
+            }
+        }
+
+        // Switch subscriber selection
+        function switchSubscriber(val) {
+            currentSubscriber = val;
+            
+            const stdView = document.getElementById('standard-view');
+            const searchForm = document.getElementById('other-search-form');
+            const summaryBox = document.getElementById('contract-summary-box');
+            const otpForm = document.getElementById('otp-form');
+
+            if (val === 'other') {
+                stdView.classList.add('hidden');
+                summaryBox.classList.add('hidden');
+                searchForm.classList.remove('hidden');
+                otpForm.classList.add('hidden');
+            } else {
+                stdView.classList.remove('hidden');
+                summaryBox.classList.remove('hidden');
+                searchForm.classList.add('hidden');
+                otpForm.classList.add('hidden');
+                
+                populateActionDropdown(val);
+                updateDossierRequiredBanner();
+                renderDocuments();
+            }
+        }
+
+        function confirmAccountSelection() {
+            const selectedRadio = document.querySelector('input[name="accountSelect"]:checked');
+            if(selectedRadio) {
+                const val = selectedRadio.value;
+                let text = "";
+                if(val === 'mobile_prepaid') text = "Di động trả trước_0986 668 888";
+                else if(val === 'mobile_postpaid') text = "Di động trả sau_0988 123 456";
+                else if(val === 'ftth') text = "Internet_0989 858 785";
+                else if(val === 'tv') text = "TV360_0989 858 785";
+                else if(val === 'camera') text = "Camera_0989 858 785";
+                else if(val === 'other') text = "Tài khoản khác";
+
+                document.getElementById('selected-account-text').innerText = text;
+                document.getElementById('account-modal').classList.add('hidden');
+                
+                switchSubscriber(val);
+            }
+        }
+
+        // Xử lý đổi Placeholder khi chọn radio
+        function updateSearchPlaceholder(val) {
+            const input = document.getElementById('other-input');
+            input.placeholder = "Nhập " + val.toLowerCase() + " *";
+            checkFormValid();
+        }
+
+        // Bật/tắt nút Tra cứu nếu có nhập liệu
+        function checkFormValid() {
+            const input = document.getElementById('other-input');
+            const btn = document.getElementById('btn-search-other');
+            if(input.value.trim().length > 0) {
+                btn.disabled = false;
+                btn.classList.remove('bg-slate-200', 'text-slate-400');
+                btn.classList.add('bg-viettel', 'text-white', 'shadow-md', 'shadow-red-200', 'hover:bg-viettel-dark');
+            } else {
+                btn.disabled = true;
+                btn.classList.add('bg-slate-200', 'text-slate-400');
+                btn.classList.remove('bg-viettel', 'text-white', 'shadow-md', 'shadow-red-200', 'hover:bg-viettel-dark');
+            }
+        }
+
+        // Xử lý Gửi yêu cầu tra cứu thuê bao khác
+        function handleSearchOther() {
+            const inputVal = document.getElementById('other-input').value;
+            if(!inputVal) return;
+            
+            // Chuyển sang màn hình OTP
+            document.getElementById('other-search-form').classList.add('hidden');
+            document.getElementById('otp-form').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        // Xử lý Xác nhận OTP
+        function handleVerifyOTP() {
+            // Ẩn OTP, hiện lại view tiêu chuẩn
+            document.getElementById('otp-form').classList.add('hidden');
+            document.getElementById('standard-view').classList.remove('hidden');
+            document.getElementById('contract-summary-box').classList.remove('hidden');
+            
+            // Giả lập dữ liệu trả về cho số mới tìm kiếm (lấy form cố định hoặc di động)
+            currentSubscriber = 'mobile_prepaid'; 
+            document.getElementById('contract-number-text').innerText = "91827364";
+            document.getElementById('subscriber-select').value = 'other';
+            updateDossierRequiredBanner();
+            renderDocuments();
+        }
+
+        // Switch action type
+        function switchActionType(val) {
+            currentAction = val;
+            renderDocuments();
+        }
+
+        // Navigation handlers
+        function navigateToContractScreen() {
+            document.getElementById('screen-home').classList.add('hidden');
+            document.getElementById('screen-contract').classList.remove('hidden');
+            initContractScreen();
+        }
+
+        function navigateToHomeScreen() {
+            document.getElementById('screen-contract').classList.add('hidden');
+            document.getElementById('screen-home').classList.remove('hidden');
+        }
+
+        // Filter categories
+        function filterCategory(cat) {
+            currentCategory = cat;
+            
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-viettel', 'text-white', 'border-viettel', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+
+            event.currentTarget.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+            event.currentTarget.classList.add('bg-viettel', 'text-white', 'border-viettel', 'shadow-sm');
+
+            renderDocuments();
+        }
+
+        // Filter documents by search keyword
+        function filterDocuments() {
+            renderDocuments();
+        }
+
+        // Render document list
+        function renderDocuments() {
+            const container = document.getElementById('document-list');
+            const searchKey = document.getElementById('document-search').value.toLowerCase();
+            const docs = documentsData[currentSubscriber] || [];
+
+            let filtered = docs.filter(doc => {
+                const matchCat = (currentCategory === 'all') || (doc.cat === currentCategory);
+                const matchAction = (currentAction === 'all') || (doc.action === currentAction);
+                const matchSearch = doc.title.toLowerCase().includes(searchKey) || 
+                                    doc.code.toLowerCase().includes(searchKey) ||
+                                    doc.desc.toLowerCase().includes(searchKey);
+                return matchCat && matchAction && matchSearch;
+            });
+
+            document.getElementById('count-all').innerText = filtered.length;
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 bg-white rounded-2xl border border-slate-200">
+                        <i data-lucide="file-x-2" class="w-10 h-10 text-slate-300 mx-auto mb-2"></i>
+                        <p class="text-xs font-bold text-slate-600">Chưa tìm thấy chứng từ phù hợp</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Vui lòng thử chọn Loại tác động hoặc Từ khoá khác</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            container.innerHTML = filtered.map(doc => {
+                let badgeStyle = "bg-emerald-100 text-emerald-800 border-emerald-200";
+                if (doc.statusColor === "blue") badgeStyle = "bg-blue-100 text-blue-800 border-blue-200";
+                if (doc.statusColor === "slate") badgeStyle = "bg-slate-100 text-slate-700 border-slate-200";
+
+                return `
+                    <div class="bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-pink-50 text-viettel border border-pink-100">
+                                ${doc.typeText}
+                            </span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeStyle}">
+                                ${doc.status}
+                            </span>
+                        </div>
+
+                        <h4 class="text-xs font-black text-slate-900 mt-2 leading-snug">
+                            ${doc.title}
+                        </h4>
+
+                        <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                            ${doc.desc}
+                        </p>
+
+                        <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-medium">
+                            <div class="flex items-center space-x-2">
+                                <span>Mã VB: <b class="text-slate-700">${doc.code}</b></span>
+                                <span>•</span>
+                                <span>Ngày lập: ${doc.date}</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 flex gap-2">
+                            <button onclick="openPdfModal('${doc.id}')" class="flex-1 py-1.5 bg-viettel/10 text-viettel font-bold text-xs rounded-xl hover:bg-viettel hover:text-white transition flex items-center justify-center gap-1">
+                                <i data-lucide="eye" class="w-3.5 h-3.5"></i> Xem chi tiết
+                            </button>
+                            <button onclick="alert('Đã bắt đầu tải file PDF về máy!')" class="px-3 py-1.5 bg-slate-100 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-200 transition flex items-center justify-center">
+                                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // Open PDF viewer modal
+        function openPdfModal(docId) {
+            const allDocs = [
+                ...documentsData.ftth, 
+                ...documentsData.mobile_prepaid, 
+                ...documentsData.mobile_postpaid, 
+                ...documentsData.tv, 
+                ...documentsData.camera
+            ];
+            const found = allDocs.find(d => d.id === docId);
+
+            if(found) {
+                document.getElementById('modal-doc-title').innerText = found.title;
+                document.getElementById('modal-doc-code').innerText = "Mã VB: " + found.code;
+                document.getElementById('modal-pdf-heading').innerText = found.pdfTitle;
+                document.getElementById('modal-pdf-subheading').innerText = "Số: " + found.code;
+            }
+
+            document.getElementById('pdf-modal').classList.remove('hidden');
+        }
+
+        // Close PDF viewer modal
+        function closePdfModal() {
+            document.getElementById('pdf-modal').classList.add('hidden');
+        }
+
+        // Hỗ trợ kéo thả chuột (Drag-to-scroll) trên Desktop
+        document.addEventListener('DOMContentLoaded', () => {
+            // Thiết lập giá trị mặc định cho ô chọn thời gian (12 tháng gần nhất)
+            const today = new Date();
+            const currentMonth = today.getMonth() + 1;
+            const currentYear = today.getFullYear();
+            
+            const toMonthStr = currentYear + '-' + currentMonth.toString().padStart(2, '0');
+            const fromMonthStr = (currentYear - 1) + '-' + currentMonth.toString().padStart(2, '0');
+            
+            const monthFrom = document.getElementById('month-from');
+            const monthTo = document.getElementById('month-to');
+            if (monthFrom) monthFrom.value = fromMonthStr;
+            if (monthTo) monthTo.value = toMonthStr;
+
+            // Drag to scroll
+            const sliders = document.querySelectorAll('.overflow-x-auto');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            sliders.forEach(slider => {
+                // Đổi con trỏ chuột để báo hiệu có thể kéo
+                slider.classList.add('cursor-grab');
+                
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('cursor-grabbing');
+                    slider.classList.remove('cursor-grab', 'snap-x'); // Tạm tắt snap để kéo mượt hơn
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('cursor-grabbing');
+                    slider.classList.add('cursor-grab', 'snap-x');
+                });
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('cursor-grabbing');
+                    slider.classList.add('cursor-grab', 'snap-x');
+                });
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 1.5; // Tốc độ cuộn
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
