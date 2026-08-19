@@ -223,49 +223,90 @@
                         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
                     </div>
 
-                    <!-- CONTRACT SEARCH SHORTCUT ICON -->
-                    <div class="mt-4 bg-white rounded-2xl p-4 shadow-md border border-slate-100">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                                <i data-lucide="shield-check" class="w-4 h-4 text-viettel"></i>
-                                Tiện ích Hợp đồng & Pháp lý
-                            </h3>
-                            <span class="text-[10px] bg-red-100 text-viettel font-bold px-2 py-0.5 rounded-full">MỚI</span>
-                        </div>
+                    <!-- TIỆN ÍCH INTERNET -->
+                    <div class="mt-6">
+                        <h3 class="text-[16px] font-bold text-slate-900 px-4 mb-3">Tiện ích Internet</h3>
 
-                        <!-- Menu Grid -->
-                        <div class="grid grid-cols-4 gap-2">
-                            <button onclick="navigateToContractScreen()" class="group flex flex-col items-center text-center p-2 rounded-xl hover:bg-red-50/60 transition relative">
-                                <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                        <!-- Scrollable Icons List -->
+                        <div class="flex overflow-x-auto no-scrollbar px-4 pb-2 gap-4 snap-x">
+                            
+                            <!-- 1. Tra cứu hợp đồng (New feature) -->
+                            <button onclick="navigateToContractScreen()" class="group flex flex-col items-center min-w-[70px] snap-start relative">
+                                <span class="absolute -top-0.5 right-2 flex h-2.5 w-2.5 z-10">
                                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-viettel"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-viettel border border-white"></span>
                                 </span>
-                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-viettel to-rose-500 text-white flex items-center justify-center shadow-lg shadow-red-200 group-hover:scale-105 transition duration-200">
+                                <div class="w-12 h-12 rounded-[14px] bg-gradient-to-tr from-viettel to-rose-500 text-white flex items-center justify-center shadow-lg shadow-red-200 mb-2 group-hover:scale-105 transition">
                                     <i data-lucide="file-text" class="w-6 h-6"></i>
                                 </div>
-                                <span class="text-[11px] font-bold text-slate-800 mt-1.5 group-hover:text-viettel transition">Tra cứu hợp đồng</span>
+                                <span class="text-[11px] font-bold text-slate-800 text-center leading-tight group-hover:text-viettel transition">Tra cứu<br>hợp đồng</span>
                             </button>
 
-                            <button class="flex flex-col items-center text-center p-2 rounded-xl hover:bg-slate-50 transition">
-                                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                                    <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                            <!-- 2. Quản lý Modem wifi -->
+                            <button class="flex flex-col items-center min-w-[72px] snap-start group">
+                                <div class="w-12 h-12 flex items-center justify-center relative mb-2">
+                                    <i data-lucide="router" class="w-7 h-7 text-slate-800 font-light stroke-[1.5]"></i>
+                                    <span class="absolute top-2.5 right-2 w-1.5 h-1.5 bg-red-500 rounded-full border border-white"></span>
                                 </div>
-                                <span class="text-[11px] font-medium text-slate-600 mt-1.5">Ký số MySign</span>
+                                <span class="text-[11px] font-medium text-slate-700 text-center leading-tight">Quản lý<br>Modem wifi</span>
                             </button>
 
-                            <button class="flex flex-col items-center text-center p-2 rounded-xl hover:bg-slate-50 transition">
-                                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
-                                    <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                            <!-- 3. Hỗ trợ khách hàng -->
+                            <button class="flex flex-col items-center min-w-[72px] snap-start group">
+                                <div class="w-12 h-12 flex items-center justify-center relative mb-2">
+                                    <i data-lucide="alert-triangle" class="w-7 h-7 text-slate-800 font-light stroke-[1.5]"></i>
+                                    <span class="absolute bottom-2.5 right-1.5 w-3.5 h-3.5 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-100"><i data-lucide="search" class="w-2 h-2 text-red-500 stroke-[3]"></i></span>
                                 </div>
-                                <span class="text-[11px] font-medium text-slate-600 mt-1.5">Nghiệm thu</span>
+                                <span class="text-[11px] font-medium text-slate-700 text-center leading-tight">Hỗ trợ<br>khách hàng</span>
                             </button>
 
-                            <button class="flex flex-col items-center text-center p-2 rounded-xl hover:bg-slate-50 transition">
-                                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
-                                    <i data-lucide="repeat" class="w-5 h-5"></i>
+                            <!-- 4. Đổi số liên hệ -->
+                            <button class="flex flex-col items-center min-w-[72px] snap-start group">
+                                <div class="w-12 h-12 flex items-center justify-center relative mb-2">
+                                    <i data-lucide="contact" class="w-7 h-7 text-slate-800 font-light stroke-[1.5]"></i>
+                                    <span class="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-100"><i data-lucide="pencil" class="w-2 h-2 text-red-500 stroke-[3]"></i></span>
                                 </div>
-                                <span class="text-[11px] font-medium text-slate-600 mt-1.5">Đổi dịch vụ</span>
+                                <span class="text-[11px] font-medium text-slate-700 text-center leading-tight">Đổi số<br>liên hệ</span>
                             </button>
+
+                            <!-- 5. Thay đổi địa chỉ -->
+                            <button class="flex flex-col items-center min-w-[72px] snap-start group">
+                                <div class="w-12 h-12 flex items-center justify-center relative mb-2">
+                                    <i data-lucide="map-pin" class="w-7 h-7 text-slate-800 font-light stroke-[1.5]"></i>
+                                    <span class="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-100"><i data-lucide="pencil" class="w-2 h-2 text-red-500 stroke-[3]"></i></span>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-700 text-center leading-tight">Thay đổi địa<br>chỉ lắp đặt</span>
+                            </button>
+
+                            <!-- 6. Kiểm tra độ mạng -->
+                            <button class="flex flex-col items-center min-w-[72px] snap-start group">
+                                <div class="w-12 h-12 flex items-center justify-center relative mb-2">
+                                    <i data-lucide="gauge" class="w-7 h-7 text-slate-800 font-light stroke-[1.5]"></i>
+                                    <div class="absolute top-3.5 right-4 w-1 h-3 bg-red-500 rotate-45 origin-bottom rounded-full border-[0.5px] border-white"></div>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-700 text-center leading-tight">Kiểm tra<br>độ mạng</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Đăng ký Internet Banner -->
+                    <div class="mt-4 mx-4 mb-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-100 rounded-[20px] p-4 relative overflow-hidden h-[110px] cursor-pointer border border-pink-100/50 hover:opacity-95 transition">
+                        <div class="relative z-10 h-full flex flex-col justify-center">
+                            <h3 class="text-[17px] font-bold text-slate-800">Đăng ký Internet</h3>
+                            <div class="mt-2 inline-block bg-white text-viettel font-bold text-[11px] px-3.5 py-1.5 rounded-full shadow-sm w-fit hover:bg-slate-50 transition">
+                                Đăng ký ngay
+                            </div>
+                        </div>
+                        
+                        <!-- Wifi Decorative Elements (mimicking image 1) -->
+                        <div class="absolute -bottom-6 -right-4 w-32 h-32 opacity-90 pointer-events-none">
+                            <div class="absolute bottom-0 right-0 w-32 h-32 border-[12px] border-rose-400 rounded-full rounded-br-none rounded-bl-none rounded-tr-none"></div>
+                            <div class="absolute bottom-0 right-0 w-24 h-24 border-[12px] border-viettel rounded-full rounded-br-none rounded-bl-none rounded-tr-none"></div>
+                            <div class="absolute bottom-0 right-0 w-12 h-12 bg-rose-400 rounded-full rounded-br-none rounded-bl-none rounded-tr-none"></div>
+                        </div>
+                        <!-- Sparkle decorative -->
+                        <div class="absolute bottom-4 right-[125px] w-4 h-4 text-purple-400 rotate-45">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
                         </div>
                     </div>
 
