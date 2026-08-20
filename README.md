@@ -1,5 +1,9 @@
 # Tra cứu hợp đồng - Viettel Tammi
 
+**🔗 Trải nghiệm thực tế (Live Demo):** [https://tracuhopdong-viettel.lamquangduc312.workers.dev/](https://tracuhopdong-viettel.lamquangduc312.workers.dev/)
+
+**🔗 Kho mã nguồn (GitHub):** [https://github.com/lamquangduc312/tracuhopdong-viettel](https://github.com/lamquangduc312/tracuhopdong-viettel)
+
 Dự án giao diện mô phỏng ứng dụng **Viettel Tammi** (Tính năng tra cứu hợp đồng và các tiện ích Internet) được xây dựng bằng HTML và Tailwind CSS. 
 
 Dự án này được tối ưu để triển khai nhanh chóng (Deploy) trực tiếp lên nền tảng **Cloudflare Pages**.
@@ -16,7 +20,7 @@ git init
 git add .
 git commit -m "Khởi tạo dự án Tra cứu hợp đồng Viettel Tammi"
 git branch -M main
-git remote add origin https://github.com/<USERNAME_CỦA_BẠN>/<TÊN_REPO>.git
+git remote add origin https://github.com/lamquangduc312/tracuhopdong-viettel.git
 git push -u origin main
 ```
 
