@@ -1190,9 +1190,9 @@
                             <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-pink-50 text-viettel border border-pink-100">
                                 ${doc.typeText}
                             </span>
-                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeStyle}">
+                            ${doc.cat === 'hd' ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeStyle}">
                                 ${doc.status}
-                            </span>
+                            </span>` : ''}
                         </div>
 
                         <h4 class="text-xs font-black text-slate-900 mt-2 leading-snug">
