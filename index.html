@@ -1515,8 +1515,9 @@
                 </button>
             </div>
 
+            
             <!-- Content -->
-            <div class="px-5 pb-6">
+            <div class="px-5 pb-6 max-h-[80vh] overflow-y-auto no-scrollbar">
                 <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100">
                     <div class="flex items-center gap-2 mb-3">
                         <div class="w-6 h-6 rounded-full bg-pink-100 flex items-center justify-center text-viettel">
@@ -1530,7 +1531,6 @@
                     
                     <!-- Stars -->
                     <div class="flex justify-center gap-2 mb-2" id="rating-stars-container">
-                        <!-- Filled dynamically or hardcoded -->
                         <button onclick="setRating(1)" class="p-1"><i data-lucide="star" class="w-9 h-9 text-slate-300 fill-slate-300 star-icon"></i></button>
                         <button onclick="setRating(2)" class="p-1"><i data-lucide="star" class="w-9 h-9 text-slate-300 fill-slate-300 star-icon"></i></button>
                         <button onclick="setRating(3)" class="p-1"><i data-lucide="star" class="w-9 h-9 text-slate-300 fill-slate-300 star-icon"></i></button>
@@ -1542,11 +1542,66 @@
                     </div>
                 </div>
 
+                <!-- Reason Block (Hidden by default) -->
+                <div id="rating-reason-block" class="bg-slate-50 rounded-2xl p-4 border border-slate-100 mt-4 hidden">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-6 h-6 rounded-full bg-pink-100 flex items-center justify-center text-viettel">
+                            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <span class="text-[13px] font-bold text-slate-800">Nguyên nhân chưa hài lòng</span>
+                    </div>
+                    <p class="text-[13px] text-slate-500 mb-4">Điều gì khiến bạn chưa hài lòng?</p>
+                    
+                    <div class="space-y-3.5">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative flex items-center justify-center">
+                                <input type="checkbox" class="peer sr-only" name="rating-reason">
+                                <div class="w-5 h-5 rounded-[4px] border-[1.5px] border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <span class="text-[13px] text-slate-700 font-medium">Thái độ phục vụ chưa tốt</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative flex items-center justify-center">
+                                <input type="checkbox" class="peer sr-only" name="rating-reason">
+                                <div class="w-5 h-5 rounded-[4px] border-[1.5px] border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <span class="text-[13px] text-slate-700 font-medium">Chưa hỗ trợ được khách hàng</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative flex items-center justify-center">
+                                <input type="checkbox" class="peer sr-only" name="rating-reason">
+                                <div class="w-5 h-5 rounded-[4px] border-[1.5px] border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <span class="text-[13px] text-slate-700 font-medium">Phục vụ chậm</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative flex items-center justify-center">
+                                <input type="checkbox" class="peer sr-only" name="rating-reason" onchange="toggleOtherReason(this)">
+                                <div class="w-5 h-5 rounded-[4px] border-[1.5px] border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <span class="text-[13px] text-slate-700 font-medium">Lý do khác</span>
+                        </label>
+                    </div>
+                    
+                    <div id="other-reason-input" class="mt-4 hidden transition-all">
+                        <input type="text" placeholder="Nhập lý do" class="w-full text-[13px] px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-viettel text-slate-800 placeholder-slate-400 bg-white shadow-sm">
+                    </div>
+                </div>
+
                 <!-- Submit Button -->
                 <button id="btn-submit-rating" onclick="submitRating()" disabled class="w-full mt-5 py-3.5 rounded-full bg-slate-100 text-slate-400 text-sm font-bold transition-all flex items-center justify-center disabled:opacity-70">
                     Gửi đánh giá
                 </button>
             </div>
+
         </div>
     </div>
 
