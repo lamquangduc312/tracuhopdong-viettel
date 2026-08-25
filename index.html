@@ -1499,7 +1499,151 @@
                 });
             });
         });
-    </script>
+    
+        // RATING LOGIC
+        let currentRating = 0;
+        let currentStaffId = null;
+
+        function openRatingModal(staffId) {
+            currentStaffId = staffId;
+            const modal = document.getElementById('modal-rating');
+            const sheet = document.getElementById('rating-bottom-sheet');
+            modal.classList.remove('hidden');
+            
+            setRating(0);
+            
+            // Hide reasons initially
+            const reasonBlock = document.getElementById('rating-reason-block');
+            const inputBlock = document.getElementById('other-reason-input');
+            if(reasonBlock) reasonBlock.classList.add('hidden');
+            if(inputBlock) inputBlock.classList.add('hidden');
+            
+            // Uncheck all
+            const checkboxes = document.querySelectorAll('input[name="rating-reason"]');
+            checkboxes.forEach(cb => cb.checked = false);
+            
+            setTimeout(() => {
+                sheet.classList.remove('translate-y-full');
+            }, 10);
+            
+            lucide.createIcons();
+        }
+
+        function closeRatingModal() {
+            const modal = document.getElementById('modal-rating');
+            const sheet = document.getElementById('rating-bottom-sheet');
+            
+            sheet.classList.add('translate-y-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function toggleOtherReason(el) {
+            const inputBlock = document.getElementById('other-reason-input');
+            if(inputBlock) {
+                if(el.checked) {
+                    inputBlock.classList.remove('hidden');
+                } else {
+                    inputBlock.classList.add('hidden');
+                }
+            }
+        }
+
+        function setRating(stars) {
+            currentRating = stars;
+            const container = document.getElementById('rating-stars-container');
+            const icons = container.querySelectorAll('.star-icon');
+            const textEl = document.getElementById('rating-text');
+            const btnSubmit = document.getElementById('btn-submit-rating');
+            const reasonBlock = document.getElementById('rating-reason-block');
+
+            icons.forEach((icon, index) => {
+                if (index < stars) {
+                    icon.classList.remove('text-slate-300', 'fill-slate-300');
+                    icon.classList.add('text-yellow-400', 'fill-yellow-400');
+                } else {
+                    icon.classList.remove('text-yellow-400', 'fill-yellow-400');
+                    icon.classList.add('text-slate-300', 'fill-slate-300');
+                }
+            });
+
+            if (stars === 0) {
+                textEl.classList.add('opacity-0');
+                btnSubmit.disabled = true;
+                btnSubmit.className = "w-full mt-5 py-3.5 rounded-full bg-slate-100 text-slate-400 text-sm font-bold transition-all flex items-center justify-center disabled:opacity-70";
+                if(reasonBlock) reasonBlock.classList.add('hidden');
+            } else {
+                textEl.classList.remove('opacity-0');
+                if (stars === 5) textEl.innerText = "Rất hài lòng";
+                else if (stars === 4) textEl.innerText = "Hài lòng";
+                else if (stars === 3) textEl.innerText = "Bình thường";
+                else if (stars === 2) textEl.innerText = "Không hài lòng";
+                else if (stars === 1) textEl.innerText = "Rất không hài lòng";
+                
+                // Show reasons for 1, 2, 3 stars
+                if (reasonBlock) {
+                    if (stars <= 3) {
+                        reasonBlock.classList.remove('hidden');
+                    } else {
+                        reasonBlock.classList.add('hidden');
+                    }
+                }
+
+                // Enable submit button
+                btnSubmit.disabled = false;
+                btnSubmit.className = "w-full mt-5 py-3.5 rounded-full bg-slate-900 text-white text-sm font-bold transition-all flex items-center justify-center hover:bg-slate-800 shadow-md";
+            }
+            
+            // Re-render icons in case they were hidden
+            lucide.createIcons();
+        }
+
+        function submitRating() {
+            closeRatingModal();
+            
+            // Increment review count
+            if (currentStaffId) {
+                const countEl = document.getElementById('review-count-' + currentStaffId);
+                if (countEl) {
+                    let count = parseInt(countEl.innerText);
+                    if (!isNaN(count)) {
+                        countEl.innerText = count + 1;
+                    }
+                }
+            }
+
+            setTimeout(() => {
+                openRatingSuccessModal();
+            }, 300);
+        }
+
+        function openRatingSuccessModal() {
+            const modal = document.getElementById('modal-rating-success');
+            const popup = document.getElementById('rating-success-popup');
+            modal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                popup.classList.remove('scale-95', 'opacity-0');
+                popup.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            lucide.createIcons();
+        }
+
+        function closeRatingSuccessModal() {
+            const modal = document.getElementById('modal-rating-success');
+            const popup = document.getElementById('rating-success-popup');
+            
+            popup.classList.remove('scale-100', 'opacity-100');
+            popup.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+</script>
 
     <!-- RATING MODAL -->
     <div id="modal-rating" class="fixed inset-0 z-[100] hidden">
