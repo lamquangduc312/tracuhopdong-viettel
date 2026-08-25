@@ -310,48 +310,99 @@
                         </div>
                     </div>
 
+                    
                     <!-- Tiện ích Di động -->
                     <div class="mt-6 mb-4">
-                        <h3 class="text-[15px] font-bold text-slate-900 px-4 mb-4">Tiện ích Di động</h3>
-                        <div class="flex overflow-x-auto no-scrollbar gap-4 px-4 pb-2 snap-x">
+                        <div class="flex justify-between items-center px-4 mb-4">
+                            <h3 class="text-[15px] font-bold text-slate-900">Tiện ích Di động</h3>
+                        </div>
+                        <div class="flex overflow-x-auto no-scrollbar gap-2 px-3 pb-2 snap-x">
                             
-                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[60px]">
-                                <div class="w-11 h-11 flex items-center justify-center mb-1.5 bg-white shadow-sm border border-slate-100 rounded-2xl relative">
-                                    <i data-lucide="smartphone-nfc" class="w-5 h-5 text-slate-700 stroke-[1.5]"></i>
-                                    <div class="absolute top-1 right-1 w-2 h-2 rounded-full bg-viettel badge-pulse"></div>
+                            <!-- 1. Tài khoản thanh toán -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="circle-user" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                    <div class="absolute top-1 right-1"><i data-lucide="asterisk" class="w-3 h-3 text-viettel fill-viettel"></i></div>
                                 </div>
-                                <span class="text-[10px] font-medium text-slate-700 leading-tight text-center">Xác thực<br>đổi máy</span>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Tài khoản<br>thanh toán</span>
                             </button>
-                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[60px]">
-                                <div class="w-11 h-11 flex items-center justify-center mb-1.5 bg-white shadow-sm border border-slate-100 rounded-2xl">
-                                    <i data-lucide="tags" class="w-5 h-5 text-slate-700 stroke-[1.5]"></i>
+
+                            <!-- 2. Xác thực thông tin TB -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="clipboard-check" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                    <div class="absolute bottom-1 right-1 bg-white rounded-full"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-viettel fill-white"></i></div>
                                 </div>
-                                <span class="text-[10px] font-medium text-slate-700 leading-tight text-center">Gói cước<br>4G/5G</span>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Xác thực<br>thông tin TB</span>
                             </button>
-                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[60px]">
-                                <div class="w-11 h-11 flex items-center justify-center mb-1.5 bg-white shadow-sm border border-slate-100 rounded-2xl relative">
-                                    <i data-lucide="sim-card" class="w-5 h-5 text-slate-700 stroke-[1.5]"></i>
+
+                            <!-- 3. Đổi eSIM -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="sim-card" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                    <div class="absolute top-1 right-0 bg-white rounded-full"><i data-lucide="refresh-cw" class="w-3 h-3 text-viettel"></i></div>
                                 </div>
-                                <span class="text-[10px] font-medium text-slate-700 leading-tight text-center">Mua SIM<br>- eSIM</span>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center mt-2">Đổi eSIM</span>
                             </button>
-                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[60px]">
-                                <div class="w-11 h-11 flex items-center justify-center mb-1.5 bg-white shadow-sm border border-slate-100 rounded-2xl relative">
-                                    <i data-lucide="plus" class="w-5 h-5 text-viettel stroke-[1.5]"></i>
+
+                            <!-- 4. Thanh toán viễn thông -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="receipt-text" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
                                 </div>
-                                <span class="text-[10px] font-medium text-slate-700 leading-tight text-center">Viettel++</span>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Thanh toán<br>viễn thông</span>
                             </button>
-                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[60px]">
-                                <div class="w-11 h-11 flex items-center justify-center mb-1.5 bg-white shadow-sm border border-slate-100 rounded-2xl relative">
-                                    <i data-lucide="wallet" class="w-5 h-5 text-slate-700 stroke-[1.5]"></i>
+
+                            <!-- 5. Hỗ trợ khách hàng -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="triangle-alert" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
                                 </div>
-                                <span class="text-[10px] font-medium text-slate-700 leading-tight text-center">Tài khoản<br>thanh toán</span>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Hỗ trợ khách<br>hàng</span>
                             </button>
-                            <button onclick="navigateToContractScreenMobile()" class="group flex flex-col items-center flex-shrink-0 snap-start w-[60px]">
-                                <div class="w-11 h-11 flex items-center justify-center mb-1.5 bg-pink-50 border border-pink-100 rounded-2xl shadow-sm">
+
+                            <!-- 6. Dịch vụ giá trị gia tăng -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="package-plus" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                    <div class="absolute top-0 right-2"><i data-lucide="star" class="w-2.5 h-2.5 text-viettel fill-viettel"></i></div>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Dịch vụ giá trị<br>gia tăng</span>
+                            </button>
+
+                            <!-- 7. Quản lý thẻ cào -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="credit-card" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                    <div class="absolute -top-1 -right-1 bg-white rounded-full"><i data-lucide="plus" class="w-3.5 h-3.5 text-viettel"></i></div>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Quản lý<br>thẻ cào</span>
+                            </button>
+
+                            <!-- 8. Tra cứu đơn hàng -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="file-search" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Tra cứu<br>đơn hàng</span>
+                            </button>
+
+                            <!-- 9. Đăng ký thông tin -->
+                            <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
+                                    <i data-lucide="file-pen-line" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
+                                </div>
+                                <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Đăng ký<br>thông tin</span>
+                            </button>
+
+                            <!-- 10. Tra cứu hợp đồng (Custom Added) -->
+                            <button onclick="navigateToContractScreenMobile()" class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative bg-pink-50 rounded-full border border-pink-100">
                                     <i data-lucide="file-text" class="w-5 h-5 text-viettel stroke-[2]"></i>
                                 </div>
-                                <span class="text-[10px] font-bold text-viettel leading-tight text-center">Tra cứu<br>hợp đồng</span>
+                                <span class="text-[11px] font-bold text-viettel leading-tight text-center">Tra cứu<br>hợp đồng</span>
                             </button>
+
                         </div>
                     </div>
 
