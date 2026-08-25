@@ -1064,28 +1064,29 @@
 
                 <div class="p-4 space-y-4">
                     
-                    <!-- SUBSCRIBER SELECTOR -->
-                    <div class="bg-white rounded-2xl p-3.5 shadow-md border border-slate-200 space-y-3">
+                    <!-- SUBSCRIBER SELECTOR - Enhanced for Mobile -->
+                    <div class="bg-gradient-to-br from-slate-50 to-blue-50 rounded-[20px] p-4 sm:p-4 shadow-md border border-slate-200 space-y-3">
                         <div>
-                            <label class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                                Chọn tài khoản
+                            <label class="text-[11px] font-bold uppercase tracking-widest text-slate-500 block mb-2">
+                                🔑 Chọn tài khoản
                             </label>
                             <div class="relative">
-                                <div onclick="document.getElementById('account-modal').classList.remove('hidden')" class="w-full bg-slate-50 border border-slate-200 text-slate-900 text-xs font-bold rounded-xl p-3 flex justify-between items-center cursor-pointer">
-                                    <span id="selected-account-text">Di động trả sau_0988 123 456</span>
-                                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500"></i>
+                                <div onclick="document.getElementById('account-modal').classList.remove('hidden')" class="w-full bg-white border-2 border-slate-300 text-slate-900 text-sm font-bold rounded-[14px] p-3.5 flex justify-between items-center cursor-pointer hover:border-viettel transition-all active:scale-95 min-h-[44px]">
+                                    <span id="selected-account-text" class="truncate">Di động trả sau_0988 123 456</span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-600 flex-shrink-0 ml-2"></i>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Contract Number Summary Box -->
-                        <div id="contract-summary-box" class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs">
-                            <div>
-                                <span class="text-slate-400">Mã hợp đồng:</span>
-                                <span id="contract-number-text" class="font-extrabold text-slate-800 ml-1">88572102</span>
+                        <!-- Contract Number Summary Box - Improved Layout -->
+                        <div id="contract-summary-box" class="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-semibold text-slate-600">Mã hợp đồng:</span>
+                                <span id="contract-number-text" class="font-black text-base text-slate-900 font-mono">88572102</span>
                             </div>
-                            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <i data-lucide="check-circle-2" class="w-3 h-3"></i> Đã xác minh
+                            <span class="bg-emerald-100 text-emerald-800 font-bold text-[11px] px-3 py-1.5 rounded-full flex items-center gap-1.5 whitespace-nowrap">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                                <span>Đã xác minh</span>
                             </span>
                         </div>
                     </div>
@@ -1175,19 +1176,21 @@
 
                     <!-- STANDARD VIEW CONTAINER -->
                     <div id="standard-view" class="space-y-4">
-                        <!-- Search Input -->
+                        <!-- Search Input - Enhanced for Mobile -->
                         <div class="relative">
-                            <input type="text" id="document-search" oninput="filterDocuments()" placeholder="Tìm chứng từ..." class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-10 pr-4 text-sm font-medium placeholder-slate-400 shadow-sm focus:outline-none focus:border-viettel focus:ring-2 focus:ring-viettel/20">
-                            <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" id="document-search" oninput="filterDocuments()" placeholder="Tìm mã, tiêu đề chứng từ..." class="w-full bg-white border border-slate-300 rounded-[16px] py-3 pl-11 pr-4 text-sm font-medium placeholder-slate-400 shadow-sm focus:outline-none focus:border-viettel focus:ring-2 focus:ring-viettel/20 transition-all">
+                            <i data-lucide="search" class="w-5 h-5 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2"></i>
                         </div>
 
                         <!-- CATEGORY FILTER TABS - 2 Main Categories -->
-                        <div class="flex gap-2 py-2">
-                            <button onclick="filterCategory('hopdong')" class="cat-btn active flex-1 border px-4 py-2.5 rounded-lg text-sm font-bold whitespace-nowrap bg-viettel text-white border-viettel shadow-md transition-all active:scale-95">
-                                📄 Hợp đồng
+                        <div class="flex gap-3 py-2 px-1">
+                            <button onclick="filterCategory('hopdong')" class="cat-btn active flex-1 border-2 px-4 py-2.5 sm:py-3 rounded-[14px] text-sm sm:text-base font-bold bg-viettel text-white border-viettel shadow-lg transition-all active:scale-95 min-h-[44px] flex items-center justify-center gap-2">
+                                <span>📄</span>
+                                <span>Hợp đồng</span>
                             </button>
-                            <button onclick="filterCategory('hosokac')" class="cat-btn flex-1 border px-4 py-2.5 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 transition-all active:scale-95">
-                                📋 Hồ sơ khác
+                            <button onclick="filterCategory('hosokac')" class="cat-btn flex-1 border-2 px-4 py-2.5 sm:py-3 rounded-[14px] text-sm sm:text-base font-bold bg-white text-slate-600 border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all active:scale-95 min-h-[44px] flex items-center justify-center gap-2">
+                                <span>📋</span>
+                                <span>Hồ sơ khác</span>
                             </button>
                         </div>
 
@@ -1942,10 +1945,10 @@
 
             if (filtered.length === 0) {
                 container.innerHTML = `
-                    <div class="text-center py-8 bg-white rounded-2xl border border-slate-200">
-                        <i data-lucide="file-x-2" class="w-10 h-10 text-slate-300 mx-auto mb-2"></i>
-                        <p class="text-xs font-bold text-slate-600">Chưa tìm thấy chứng từ phù hợp</p>
-                        <p class="text-[10px] text-slate-400 mt-0.5">Vui lòng thử chọn Loại tác động hoặc Từ khoá khác</p>
+                    <div class="text-center py-12 bg-gradient-to-b from-slate-50 to-blue-50 rounded-[20px] border-2 border-dashed border-slate-300">
+                        <div class="mb-3 text-5xl">📁</div>
+                        <p class="text-sm font-bold text-slate-700 mb-1">Không tìm thấy chứng từ</p>
+                        <p class="text-xs text-slate-500 leading-relaxed px-4">Hãy thử thay đổi từ khóa tìm kiếm hoặc chọn loại chứng từ khác</p>
                     </div>
                 `;
                 lucide.createIcons();
@@ -1957,39 +1960,63 @@
                 if (doc.statusColor === "blue") badgeStyle = "bg-blue-100 text-blue-800 border-blue-200";
                 if (doc.statusColor === "slate") badgeStyle = "bg-slate-100 text-slate-700 border-slate-200";
 
+                // Determine category icon
+                let catIcon = "📄";
+                if (doc.cat === 'pl') catIcon = "📎";
+                if (doc.cat === 'pyc') catIcon = "📋";
+                if (doc.cat === 'dlcn') catIcon = "🔒";
+
+                // Determine category color
+                let categoryColor = "bg-blue-50 text-blue-700 border-blue-200";
+                if (doc.cat === 'pl') categoryColor = "bg-amber-50 text-amber-700 border-amber-200";
+                if (doc.cat === 'pyc') categoryColor = "bg-purple-50 text-purple-700 border-purple-200";
+                if (doc.cat === 'dlcn') categoryColor = "bg-rose-50 text-rose-700 border-rose-200";
+
                 return `
-                    <div class="bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:shadow-md transition">
-                        <div class="flex justify-between items-start">
-                            <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-pink-50 text-viettel border border-pink-100">
-                                ${doc.typeText}
-                            </span>
-                            ${doc.cat === 'hd' ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeStyle}">
-                                ${doc.status}
+                    <div class="bg-white rounded-[20px] p-4 sm:p-4 border border-slate-200 shadow-sm hover:shadow-lg transition-all active:scale-98">
+                        <!-- Header: Icon + Type + Status -->
+                        <div class="flex justify-between items-start gap-2 mb-3">
+                            <div class="flex items-center gap-2 flex-1">
+                                <span class="text-xl">${catIcon}</span>
+                                <span class="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full border ${categoryColor}">
+                                    ${doc.typeText}
+                                </span>
+                            </div>
+                            ${doc.cat === 'hd' ? `<span class="text-[11px] font-bold px-2.5 py-1 rounded-full border whitespace-nowrap ${badgeStyle}">
+                                ✓ ${doc.status}
                             </span>` : ''}
                         </div>
 
-                        <h4 class="text-xs font-black text-slate-900 mt-2 leading-snug">
+                        <!-- Title -->
+                        <h4 class="text-sm sm:text-sm font-bold text-slate-900 leading-snug mb-2 line-clamp-2">
                             ${doc.title}
                         </h4>
 
-                        <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                        <!-- Description -->
+                        <p class="text-xs sm:text-xs text-slate-600 leading-relaxed mb-3 line-clamp-2">
                             ${doc.desc}
                         </p>
 
-                        <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-medium">
-                            <div class="flex items-center space-x-2">
-                                <span>Mã VB: <b class="text-slate-700">${doc.code}</b></span>
-                                <span>•</span>
-                                <span>Ngày lập: ${doc.date}</span>
+                        <!-- Meta Info: Code & Date -->
+                        <div class="mb-3 pt-2 border-t border-slate-100 space-y-1">
+                            <div class="flex items-center text-[11px] text-slate-600">
+                                <span class="font-semibold text-slate-700 mr-1">Mã VB:</span>
+                                <span class="font-mono text-slate-800">${doc.code}</span>
+                            </div>
+                            <div class="flex items-center text-[11px] text-slate-600">
+                                <span class="font-semibold text-slate-700 mr-1">Ngày lập:</span>
+                                <span>${doc.date}</span>
                             </div>
                         </div>
 
-                        <div class="mt-3 flex gap-2">
-                            <button onclick="openPdfModal('${doc.id}')" class="flex-1 py-1.5 bg-viettel/10 text-viettel font-bold text-xs rounded-xl hover:bg-viettel hover:text-white transition flex items-center justify-center gap-1">
-                                <i data-lucide="eye" class="w-3.5 h-3.5"></i> Xem chi tiết
+                        <!-- Action Buttons: Full-width for better mobile UX -->
+                        <div class="flex gap-2">
+                            <button onclick="openPdfModal('${doc.id}')" class="flex-1 py-2.5 bg-gradient-to-r from-viettel to-red-500 text-white font-bold text-sm rounded-xl hover:shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 min-h-[44px]">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                <span>Xem</span>
                             </button>
-                            <button onclick="alert('Đã bắt đầu tải file PDF về máy!')" class="px-3 py-1.5 bg-slate-100 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-200 transition flex items-center justify-center">
-                                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                            <button onclick="alert('Đã bắt đầu tải file PDF về máy!')" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition-all active:scale-95 flex items-center justify-center min-h-[44px]">
+                                <i data-lucide="download" class="w-4 h-4"></i>
                             </button>
                         </div>
                     </div>
