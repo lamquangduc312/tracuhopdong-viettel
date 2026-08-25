@@ -25,96 +25,96 @@
             </div>
 
             <!-- Header -->
-            <div class="flex justify-between items-center px-5 pb-4">
-                <h3 class="text-lg font-bold text-slate-900">Đánh giá chất lượng phục vụ</h3>
-                <button onclick="closeRatingModal()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95">
-                    <i data-lucide="x" class="w-6 h-6 text-slate-500"></i>
+            <div class="flex justify-between items-center px-3 sm:px-5 pb-3 sm:pb-4 gap-2">
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1 line-clamp-2">Đánh giá chất lượng phục vụ</h3>
+                <button onclick="closeRatingModal()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95 flex-shrink-0">
+                    <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6 text-slate-500"></i>
                 </button>
             </div>
 
 
             <!-- Content -->
-            <div class="px-5 pb-8 max-h-[75vh] overflow-y-auto no-scrollbar">
-                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-4 border border-pink-100">
+            <div class="px-3 sm:px-5 pb-6 sm:pb-8 max-h-[70vh] overflow-y-auto no-scrollbar">
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-3 sm:p-4 border border-pink-100">
                     <div class="flex items-center gap-2 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-viettel">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-viettel flex-shrink-0">
                             <i data-lucide="award" class="w-4 h-4"></i>
                         </div>
-                        <span class="text-sm font-bold text-slate-900">Chất lượng phục vụ</span>
+                        <span class="text-sm font-bold text-slate-900 line-clamp-2">Chất lượng phục vụ</span>
                     </div>
-                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-5">
-                        Đánh giá chất lượng phục vụ của Nhân viên hỗ trợ bằng cách chọn số sao:
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium mb-4">
+                        Chọn số sao để đánh giá:
                     </p>
-                    
-                    <!-- Stars -->
-                    <div class="flex justify-center gap-3 mb-2" id="rating-stars-container">
-                        <button onclick="setRating(1)" class="p-2 hover:bg-slate-100 rounded-full transition"><i data-lucide="star" class="w-10 h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(2)" class="p-2 hover:bg-slate-100 rounded-full transition"><i data-lucide="star" class="w-10 h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(3)" class="p-2 hover:bg-slate-100 rounded-full transition"><i data-lucide="star" class="w-10 h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(4)" class="p-2 hover:bg-slate-100 rounded-full transition"><i data-lucide="star" class="w-10 h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(5)" class="p-2 hover:bg-slate-100 rounded-full transition"><i data-lucide="star" class="w-10 h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
+
+                    <!-- Stars - Responsive sizing -->
+                    <div class="flex justify-center gap-2 sm:gap-3 mb-3 px-1 overflow-x-auto" id="rating-stars-container">
+                        <button onclick="setRating(1)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(2)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(3)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(4)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(5)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
                     </div>
-                    <div class="text-center h-4">
-                        <span id="rating-text" class="text-[11px] font-bold text-yellow-500 opacity-0 transition-opacity">Rất hài lòng</span>
+                    <div class="text-center h-5 mb-1">
+                        <span id="rating-text" class="text-xs font-bold text-yellow-500 opacity-0 transition-opacity">Rất hài lòng</span>
                     </div>
                 </div>
 
                 <!-- Reason Block (Hidden by default) -->
-                <div id="rating-reason-block" class="bg-yellow-50 rounded-2xl p-4 border border-yellow-100 mt-4 hidden">
+                <div id="rating-reason-block" class="bg-yellow-50 rounded-2xl p-3 sm:p-4 border border-yellow-100 mt-3 sm:mt-4 hidden">
                     <div class="flex items-center gap-2 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-orange-600">
+                        <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-orange-600 flex-shrink-0">
                             <i data-lucide="alert-circle" class="w-4 h-4"></i>
                         </div>
-                        <span class="text-sm font-bold text-slate-900">Điều gì khiến chưa hài lòng?</span>
+                        <span class="text-sm font-bold text-slate-900 line-clamp-2">Điều gì khiến chưa hài lòng?</span>
                     </div>
-                    <p class="text-xs text-slate-600 mb-4">Giúp chúng tôi cải thiện dịch vụ</p>
-                    
-                    <div class="space-y-3">
-                        <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-lg hover:bg-white/50 transition active:scale-95">
+                    <p class="text-xs text-slate-600 mb-3">Giúp chúng tôi cải thiện</p>
+
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer group px-2 py-1.5 rounded-lg hover:bg-white/50 transition active:scale-95">
                             <div class="relative flex items-center justify-center flex-shrink-0">
                                 <input type="checkbox" class="peer sr-only" name="rating-reason">
-                                <div class="w-6 h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3 h-3 sm:w-4 sm:h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
                                 </div>
                             </div>
-                            <span class="text-sm text-slate-700 font-medium">Thái độ phục vụ chưa tốt</span>
+                            <span class="text-xs sm:text-sm text-slate-700 font-medium line-clamp-2">Thái độ phục vụ</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-lg hover:bg-white/50 transition active:scale-95">
+                        <label class="flex items-center gap-3 cursor-pointer group px-2 py-1.5 rounded-lg hover:bg-white/50 transition active:scale-95">
                             <div class="relative flex items-center justify-center flex-shrink-0">
                                 <input type="checkbox" class="peer sr-only" name="rating-reason">
-                                <div class="w-6 h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3 h-3 sm:w-4 sm:h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
                                 </div>
                             </div>
-                            <span class="text-sm text-slate-700 font-medium">Chưa hỗ trợ được khách hàng</span>
+                            <span class="text-xs sm:text-sm text-slate-700 font-medium line-clamp-2">Chưa hỗ trợ tốt</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-lg hover:bg-white/50 transition active:scale-95">
+                        <label class="flex items-center gap-3 cursor-pointer group px-2 py-1.5 rounded-lg hover:bg-white/50 transition active:scale-95">
                             <div class="relative flex items-center justify-center flex-shrink-0">
                                 <input type="checkbox" class="peer sr-only" name="rating-reason">
-                                <div class="w-6 h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3 h-3 sm:w-4 sm:h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
                                 </div>
                             </div>
-                            <span class="text-sm text-slate-700 font-medium">Phục vụ chậm</span>
+                            <span class="text-xs sm:text-sm text-slate-700 font-medium">Phục vụ chậm</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-lg hover:bg-white/50 transition active:scale-95">
+                        <label class="flex items-center gap-3 cursor-pointer group px-2 py-1.5 rounded-lg hover:bg-white/50 transition active:scale-95">
                             <div class="relative flex items-center justify-center flex-shrink-0">
                                 <input type="checkbox" class="peer sr-only" name="rating-reason" onchange="toggleOtherReason(this)">
-                                <div class="w-6 h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 border-slate-300 peer-checked:bg-viettel peer-checked:border-viettel transition flex items-center justify-center group-hover:border-slate-400">
+                                    <i data-lucide="check" class="w-3 h-3 sm:w-4 sm:h-4 text-white opacity-0 peer-checked:opacity-100 stroke-[3]"></i>
                                 </div>
                             </div>
-                            <span class="text-sm text-slate-700 font-medium">Lý do khác</span>
+                            <span class="text-xs sm:text-sm text-slate-700 font-medium">Lý do khác</span>
                         </label>
                     </div>
                     
                     <div id="other-reason-input" class="mt-3 hidden transition-all">
-                        <input type="text" placeholder="Nhập lý do của bạn" class="w-full text-sm px-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-viettel focus:ring-2 focus:ring-viettel/20 text-slate-800 placeholder-slate-400 bg-white shadow-sm">
+                        <input type="text" placeholder="Nhập lý do..." class="w-full text-xs sm:text-sm px-3 sm:px-4 py-3 sm:py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-viettel focus:ring-2 focus:ring-viettel/20 text-slate-800 placeholder-slate-400 bg-white shadow-sm">
                     </div>
                 </div>
 
                 <!-- Submit Button -->
-                <button id="btn-submit-rating" onclick="submitRating()" disabled class="w-full mt-5 py-3.5 rounded-full bg-slate-100 text-slate-400 text-sm font-bold transition-all flex items-center justify-center disabled:opacity-70 active:scale-95">
+                <button id="btn-submit-rating" onclick="submitRating()" disabled class="w-full mt-4 sm:mt-5 py-3 sm:py-3.5 rounded-full bg-slate-100 text-slate-400 text-xs sm:text-sm font-bold transition-all flex items-center justify-center disabled:opacity-70 active:scale-95">
                     Gửi đánh giá
                 </button>
             </div>
@@ -127,23 +127,23 @@
         <!-- Backdrop -->
         <div class="absolute inset-0 bg-black/40 backdrop-blur-sm modal-backdrop" onclick="closeRatingSuccessModal()"></div>
         <!-- Popup -->
-        <div class="bg-white rounded-3xl w-full max-w-sm p-6 relative z-10 shadow-2xl" id="rating-success-popup">
-            <button onclick="closeRatingSuccessModal()" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95">
-                <i data-lucide="x" class="w-6 h-6 text-slate-500"></i>
+        <div class="bg-white rounded-3xl w-full max-w-sm p-4 sm:p-6 relative z-10 shadow-2xl" id="rating-success-popup">
+            <button onclick="closeRatingSuccessModal()" class="absolute top-3 sm:top-4 right-3 sm:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95">
+                <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6 text-slate-500"></i>
             </button>
 
-            <div class="flex justify-center mb-6 pt-2">
-                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-200 animate-bounce">
-                    <i data-lucide="check" class="w-10 h-10 text-white stroke-[2]"></i>
+            <div class="flex justify-center mb-4 sm:mb-6 pt-2">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-emerald-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-200 animate-bounce">
+                    <i data-lucide="check" class="w-8 h-8 sm:w-10 sm:h-10 text-white stroke-[2]"></i>
                 </div>
             </div>
 
-            <h3 class="text-xl font-bold text-slate-900 mb-2 text-center">Cảm ơn bạn!</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-8 text-center">
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 text-center">Cảm ơn bạn!</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 sm:mb-8 text-center px-1">
                 Viettel trân trọng ý kiến của bạn và sẽ tiếp tục cải thiện dịch vụ.
             </p>
 
-            <button onclick="closeRatingSuccessModal()" class="w-full py-3.5 rounded-full bg-emerald-600 text-white text-sm font-bold hover:bg-emerald-700 transition active:scale-95 shadow-md shadow-emerald-200">
+            <button onclick="closeRatingSuccessModal()" class="w-full py-3 sm:py-3.5 rounded-full bg-emerald-600 text-white text-xs sm:text-sm font-bold hover:bg-emerald-700 transition active:scale-95 shadow-md shadow-emerald-200">
                 Quay lại
             </button>
         </div>
