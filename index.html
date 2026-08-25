@@ -282,7 +282,7 @@
                     </div>
 
                     <!-- Support Staff Banner -->
-                    <div class="mt-4 bg-white rounded-2xl p-3.5 shadow-sm border border-slate-100 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition">
+                    <div onclick="navigateToSupportScreen()" class="mt-4 bg-white rounded-2xl p-3.5 shadow-sm border border-slate-100 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center space-x-3">
                             <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-viettel">
                                 <i data-lucide="headphones" class="w-5 h-5"></i>
@@ -385,7 +385,88 @@
                 </div>
             </div>
 
+            
+            <!-- SCREEN: SUPPORT STAFF -->
+            <div id="screen-support" class="hidden transition-all duration-300 pb-10">
+                <!-- Header -->
+                <div class="bg-white sticky top-0 z-50 shadow-sm border-b border-slate-100 pb-3 pt-3 px-4 flex items-center gap-3">
+                    <button onclick="navigateBackFromSupport()" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-900 text-white hover:bg-slate-800 transition">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <h2 class="text-[17px] font-bold text-slate-800">Nhân viên hỗ trợ</h2>
+                </div>
+
+                <div class="px-4 py-5 space-y-6">
+                    <!-- Nv CSKH -->
+                    <div>
+                        <h3 class="text-[11px] font-semibold text-slate-500 mb-2">Nhân viên chăm sóc khách hàng</h3>
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="relative">
+                                    <img src="https://ui-avatars.com/api/?name=Nga&background=Fecaca&color=EE0033" alt="Avatar" class="w-12 h-12 rounded-full object-cover border border-slate-100">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-[15px] font-bold text-slate-900 leading-tight">Quản Thị Nga</h4>
+                                    <div class="flex items-center text-xs text-slate-500 mt-1">
+                                        <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-400 fill-yellow-400 mr-1"></i>
+                                        <span class="font-bold text-slate-800 mr-1">4.8</span> • 8 đánh giá
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-start text-[11px] mb-4">
+                                <span class="text-slate-500 w-20">Địa chỉ</span>
+                                <span class="text-slate-900 font-semibold text-right flex-1 leading-relaxed">Tổ 1-Hoàng Liệt Phường Hoàng Liệt Thành phố Hà Nội</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <button class="flex items-center justify-center gap-1.5 py-2.5 rounded-full border border-slate-300 text-slate-700 text-xs font-bold hover:bg-slate-50">
+                                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Gọi điện
+                                </button>
+                                <button class="flex items-center justify-center gap-1.5 py-2.5 rounded-full bg-slate-900 text-white text-xs font-bold hover:bg-slate-800">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> Đánh giá
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NV HTKT -->
+                    <div>
+                        <h3 class="text-[11px] font-semibold text-slate-500 mb-2">Nhân viên hỗ trợ kĩ thuật</h3>
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="relative">
+                                    <img src="https://ui-avatars.com/api/?name=Chien&background=Fecaca&color=EE0033" alt="Avatar" class="w-12 h-12 rounded-full object-cover border border-slate-100">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-[15px] font-bold text-slate-900 leading-tight">Nguyễn Quang Chiến</h4>
+                                    <div class="flex items-center text-xs text-slate-500 mt-1">
+                                        <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-400 fill-yellow-400 mr-1"></i>
+                                        <span class="font-bold text-slate-800 mr-1">4.8</span> • 9 đánh giá
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-start text-[11px] mb-4">
+                                <span class="text-slate-500 w-20">Giờ làm việc</span>
+                                <span class="text-slate-900 font-semibold text-right flex-1 leading-relaxed">08:00 - 17:00 các ngày trong tuần</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <button class="flex items-center justify-center gap-1.5 py-2.5 rounded-full border border-slate-300 text-slate-700 text-xs font-bold hover:bg-slate-50">
+                                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Gọi điện
+                                </button>
+                                <button class="flex items-center justify-center gap-1.5 py-2.5 rounded-full bg-slate-900 text-white text-xs font-bold hover:bg-slate-800">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> Đánh giá
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- SCREEN 2: CONTRACT SEARCH SCREEN -->
+
             <div id="screen-contract" class="hidden transition-all duration-300">
                 
                 <!-- Navbar Header -->
@@ -1209,7 +1290,19 @@
             }
         }
 
+
+        function navigateToSupportScreen() {
+            document.getElementById('screen-home').classList.add('hidden');
+            document.getElementById('screen-support').classList.remove('hidden');
+        }
+
+        function navigateBackFromSupport() {
+            document.getElementById('screen-support').classList.add('hidden');
+            document.getElementById('screen-home').classList.remove('hidden');
+        }
+
         function navigateToContractScreenMobile() {
+
             document.getElementById('screen-home').classList.add('hidden');
             document.getElementById('screen-contract').classList.remove('hidden');
             initContractScreen();
