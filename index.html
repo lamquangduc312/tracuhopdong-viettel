@@ -1431,12 +1431,14 @@
             </div>
 
             <!-- Modal Action Footer -->
-            <div class="bg-white px-4 py-3.5 flex gap-2.5 rounded-b-[28px] border-t border-slate-100">
-                <button onclick="alert('Đã tải xuống văn bản PDF thành công về máy!')" class="flex-1 bg-[#ff0033] text-white py-3 rounded-xl font-bold text-[13px] flex items-center justify-center gap-1.5 shadow hover:bg-viettel-dark transition">
-                    <i data-lucide="download" class="w-4 h-4"></i> Tải về máy (PDF)
+            <div class="bg-gradient-to-r from-white to-slate-50 px-4 py-4 flex gap-2.5 rounded-b-[28px] border-t border-slate-100">
+                <button id="pdf-download-btn" onclick="downloadPdfFromModal()" class="flex-1 bg-gradient-to-r from-[#ff0033] to-red-600 text-white py-3.5 rounded-[14px] font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:from-red-600 hover:to-red-700 transition-all active:scale-95 min-h-[48px]">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    <span>Tải về (PDF)</span>
                 </button>
-                <button onclick="alert('Liên kết chia sẻ đã được chép vào bộ nhớ tạm!')" class="px-5 bg-[#f1f5f9] text-slate-700 py-3 rounded-xl font-bold text-[13px] flex items-center justify-center gap-1.5 hover:bg-slate-200 transition">
-                    <i data-lucide="share-2" class="w-4 h-4"></i> Chia sẻ
+                <button onclick="sharePdfLink()" class="px-5 sm:px-6 bg-white text-slate-700 py-3.5 rounded-[14px] font-bold text-sm border-2 border-slate-200 flex items-center justify-center gap-2 hover:border-viettel hover:text-viettel transition-all active:scale-95 min-h-[48px]">
+                    <i data-lucide="share-2" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline">Chia sẻ</span>
                 </button>
             </div>
 
@@ -2015,7 +2017,7 @@
                                 <i data-lucide="eye" class="w-4 h-4"></i>
                                 <span>Xem</span>
                             </button>
-                            <button onclick="alert('Đã bắt đầu tải file PDF về máy!')" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition-all active:scale-95 flex items-center justify-center min-h-[44px]">
+                            <button onclick="downloadPdf('${doc.id}', '${doc.code.replace(/\//g, '-')}')" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition-all active:scale-95 flex items-center justify-center min-h-[44px]">
                                 <i data-lucide="download" class="w-4 h-4"></i>
                             </button>
                         </div>
@@ -2029,19 +2031,29 @@
         // Open PDF viewer modal
         function openPdfModal(docId) {
             const allDocs = [
-                ...documentsData.ftth, 
-                ...documentsData.mobile_prepaid, 
-                ...documentsData.mobile_postpaid, 
-                ...documentsData.tv, 
+                ...documentsData.ftth,
+                ...documentsData.mobile_prepaid,
+                ...documentsData.mobile_postpaid,
+                ...documentsData.tv,
                 ...documentsData.camera
             ];
             const found = allDocs.find(d => d.id === docId);
 
             if(found) {
+                // Store current doc ID for modal actions
+                currentViewingDocId = docId;
+
+                // Update modal content
                 document.getElementById('modal-doc-title').innerText = found.title;
                 document.getElementById('modal-doc-code').innerText = "Mã VB: " + found.code;
                 document.getElementById('modal-pdf-heading').innerText = found.pdfTitle;
                 document.getElementById('modal-pdf-subheading').innerText = "Số: " + found.code;
+
+                // Scroll to top of PDF content
+                const pdfContent = document.querySelector('#pdf-modal .overflow-y-auto');
+                if (pdfContent) {
+                    pdfContent.scrollTop = 0;
+                }
             }
 
             document.getElementById('pdf-modal').classList.remove('hidden');
@@ -2050,6 +2062,60 @@
         // Close PDF viewer modal
         function closePdfModal() {
             document.getElementById('pdf-modal').classList.add('hidden');
+        }
+
+        // Store current viewing document ID for modal actions
+        let currentViewingDocId = null;
+
+        // Download PDF document from list
+        function downloadPdf(docId, fileName) {
+            const allDocs = [
+                ...documentsData.ftth,
+                ...documentsData.mobile_prepaid,
+                ...documentsData.mobile_postpaid,
+                ...documentsData.tv,
+                ...documentsData.camera
+            ];
+            const found = allDocs.find(d => d.id === docId);
+
+            if(found) {
+                // Tạo thông báo download
+                const downloadMsg = `📥 ĐANG TẢI: ${found.title}\n\nMã VB: ${found.code}\nNgày lập: ${found.date}\n\n✅ File PDF sẽ được lưu vào thư mục Downloads của bạn.`;
+                alert(downloadMsg);
+
+                // Log để debug
+                console.log('Download:', {
+                    fileName: fileName + '.pdf',
+                    title: found.title,
+                    code: found.code
+                });
+            }
+        }
+
+        // Download PDF from modal viewer
+        function downloadPdfFromModal() {
+            const title = document.getElementById('modal-doc-title').innerText;
+            const code = document.getElementById('modal-doc-code').innerText.replace('Mã VB: ', '').replace(/\//g, '-');
+
+            const downloadMsg = `📥 ĐANG TẢI: ${title}\n\nMã VB: ${code}\n\n✅ File PDF sẽ được lưu vào thư mục Downloads của bạn.`;
+            alert(downloadMsg);
+
+            console.log('Download from modal:', { title, code });
+        }
+
+        // Share PDF link
+        function sharePdfLink() {
+            const title = document.getElementById('modal-doc-title').innerText;
+            const code = document.getElementById('modal-doc-code').innerText;
+
+            const shareLink = `myviettel.vn/document/${currentViewingDocId}`;
+            const shareMsg = `🔗 CHIA SẺ TÀI LIỆU\n\n${title}\n${code}\n\nLiên kết: ${shareLink}\n\n✅ Liên kết đã được chép vào bộ nhớ tạm. Bạn có thể chia sẻ cho những người khác.`;
+            alert(shareMsg);
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(shareLink).then(() => {
+                console.log('Link copied:', shareLink);
+            });
         }
 
         // Hỗ trợ kéo thả chuột (Drag-to-scroll) trên Desktop
