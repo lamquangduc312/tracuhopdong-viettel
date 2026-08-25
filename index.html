@@ -630,10 +630,10 @@
 
                             <!-- 1. Tra cứu hợp đồng (moved to top) -->
                             <button onclick="navigateToContractScreenMobile()" class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
-                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative bg-pink-50 rounded-full border border-pink-100">
-                                    <i data-lucide="file-text" class="w-5 h-5 text-viettel stroke-[2]"></i>
+                                <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-red-400 to-pink-500 text-white flex items-center justify-center mb-2 shadow-md">
+                                    <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
                                 </div>
-                                <span class="text-[11px] font-bold text-viettel leading-tight text-center">Tra cứu<br>hợp đồng</span>
+                                <span class="text-[11px] font-bold text-slate-800 leading-tight text-center">Tra cứu<br>hợp đồng</span>
                             </button>
 
                             <!-- 2. Tài khoản thanh toán -->
@@ -888,10 +888,10 @@
                                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-viettel border border-white"></span>
                                 </span>
-                                <div class="w-12 h-12 flex items-center justify-center relative mb-2">
-                                    <i data-lucide="file-text" class="w-7 h-7 text-slate-800 font-light stroke-[1.5]"></i>
+                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-red-400 to-pink-500 text-white flex items-center justify-center mb-2 shadow-md">
+                                    <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
                                 </div>
-                                <span class="text-[11px] font-medium text-slate-700 text-center leading-tight">Tra cứu<br>hợp đồng</span>
+                                <span class="text-[11px] font-bold text-slate-800 text-center leading-tight">Tra cứu<br>hợp đồng</span>
                             </button>
 
                             <!-- 2. Quản lý Modem wifi -->
@@ -1181,28 +1181,14 @@
                             <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
                         </div>
 
-                        <!-- CATEGORY FILTER TABS -->
-                        <div class="flex space-x-2 overflow-x-auto overflow-y-hidden no-scrollbar py-2 scroll-smooth snap-x">
-                            <button onclick="filterCategory('all')" class="cat-btn active border px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap bg-viettel text-white border-viettel shadow-md shrink-0 snap-start transition-all active:scale-95">
-                                Tất cả (<span id="count-all">0</span>)
+                        <!-- CATEGORY FILTER TABS - 2 Main Categories -->
+                        <div class="flex gap-2 py-2">
+                            <button onclick="filterCategory('hopdong')" class="cat-btn active flex-1 border px-4 py-2.5 rounded-lg text-sm font-bold whitespace-nowrap bg-viettel text-white border-viettel shadow-md transition-all active:scale-95">
+                                📄 Hợp đồng
                             </button>
-                            <button onclick="filterCategory('hd')" class="cat-btn border px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start transition-all active:scale-95">
-                                Hợp đồng
+                            <button onclick="filterCategory('hosokac')" class="cat-btn flex-1 border px-4 py-2.5 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 transition-all active:scale-95">
+                                📋 Hồ sơ khác
                             </button>
-                            <button onclick="filterCategory('pl')" class="cat-btn border px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start transition-all active:scale-95">
-                                Phụ lục
-                            </button>
-                            <button onclick="filterCategory('pyc')" class="cat-btn border px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start transition-all active:scale-95">
-                                Phiếu YC
-                            </button>
-                            <button onclick="filterCategory('dlcn')" class="cat-btn border px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start transition-all active:scale-95">
-                                Xử lý DLCN
-                            </button>
-                            <button onclick="filterCategory('bb')" class="cat-btn border px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap bg-white text-slate-600 border-slate-200 hover:bg-slate-50 shrink-0 snap-start transition-all active:scale-95">
-                                Nghiệm thu
-                            </button>
-                            <!-- Thêm khoảng trống padding cuối để vuốt mượt mà không bị lẹm -->
-                            <div class="w-1 shrink-0"></div>
                         </div>
 
                         <!-- DOCUMENT LIST CONTAINER -->
@@ -1690,12 +1676,25 @@
 
         let currentSubscriber = 'ftth';
         let currentAction = 'all';
-        let currentCategory = 'all';
+        let currentCategory = 'hopdong';
 
         // Initialize contract screen components
         function initContractScreen() {
             populateActionDropdown(currentSubscriber);
             updateDossierRequiredBanner();
+
+            // Set first tab as active
+            const catButtons = document.querySelectorAll('.cat-btn');
+            catButtons.forEach((btn, idx) => {
+                if (idx === 0) {
+                    btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                    btn.classList.add('bg-viettel', 'text-white', 'border-viettel', 'shadow-md');
+                } else {
+                    btn.classList.remove('bg-viettel', 'text-white', 'border-viettel', 'shadow-md');
+                    btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                }
+            });
+
             renderDocuments();
         }
 
@@ -1909,9 +1908,18 @@
             const docs = documentsData[currentSubscriber] || [];
 
             let filtered = docs.filter(doc => {
-                const matchCat = (currentCategory === 'all') || (doc.cat === currentCategory);
+                // Filter by category group (2 main categories)
+                let matchCat = false;
+                if (currentCategory === 'hopdong') {
+                    matchCat = doc.cat === 'hd' || doc.cat === 'pl';
+                } else if (currentCategory === 'hosokac') {
+                    matchCat = doc.cat === 'pyc' || doc.cat === 'dlcn';
+                } else {
+                    matchCat = true; // Show all
+                }
+
                 const matchAction = (currentAction === 'all') || (doc.action === currentAction);
-                const matchSearch = doc.title.toLowerCase().includes(searchKey) || 
+                const matchSearch = doc.title.toLowerCase().includes(searchKey) ||
                                     doc.code.toLowerCase().includes(searchKey) ||
                                     doc.desc.toLowerCase().includes(searchKey);
                 return matchCat && matchAction && matchSearch;
