@@ -20,47 +20,47 @@
         <!-- Bottom Sheet -->
         <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] shadow-2xl" id="rating-bottom-sheet">
             <!-- Drag Handle -->
-            <div class="flex justify-center pt-3 pb-2">
-                <div class="w-10 h-1 bg-slate-300 rounded-full"></div>
+            <div class="flex justify-center pt-2 pb-1.5">
+                <div class="w-8 h-0.5 bg-slate-300 rounded-full"></div>
             </div>
 
             <!-- Header -->
-            <div class="flex justify-between items-center px-3 sm:px-5 pb-3 sm:pb-4 gap-2">
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1 line-clamp-2">Đánh giá chất lượng phục vụ</h3>
-                <button onclick="closeRatingModal()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95 flex-shrink-0">
-                    <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6 text-slate-500"></i>
+            <div class="flex justify-between items-center px-3 sm:px-5 pb-2 sm:pb-3 gap-2">
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 flex-1 line-clamp-1">Đánh giá chất lượng phục vụ</h3>
+                <button onclick="closeRatingModal()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95 flex-shrink-0">
+                    <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-500"></i>
                 </button>
             </div>
 
 
             <!-- Content -->
-            <div class="px-3 sm:px-5 pb-6 sm:pb-8 max-h-[70vh] overflow-y-auto no-scrollbar">
-                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-3 sm:p-4 border border-pink-100">
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-viettel flex-shrink-0">
-                            <i data-lucide="award" class="w-4 h-4"></i>
+            <div class="px-3 sm:px-5 pb-4 sm:pb-6 max-h-[65vh] overflow-y-auto no-scrollbar">
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-2.5 sm:p-3 border border-pink-100">
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <div class="w-7 h-7 rounded-full bg-pink-100 flex items-center justify-center text-viettel flex-shrink-0">
+                            <i data-lucide="award" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-sm font-bold text-slate-900 line-clamp-2">Chất lượng phục vụ</span>
+                        <span class="text-xs sm:text-sm font-bold text-slate-900 line-clamp-1">Chất lượng phục vụ</span>
                     </div>
-                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium mb-4">
-                        Chọn số sao để đánh giá:
+                    <p class="text-xs text-slate-700 leading-tight font-medium mb-3">
+                        Chọn số sao:
                     </p>
 
                     <!-- Stars - Responsive sizing -->
-                    <div class="flex justify-center gap-2 sm:gap-3 mb-3 px-1 overflow-x-auto" id="rating-stars-container">
-                        <button onclick="setRating(1)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(2)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(3)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(4)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
-                        <button onclick="setRating(5)" class="p-1.5 sm:p-2 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-300 fill-slate-300 star-icon"></i></button>
+                    <div class="flex justify-center gap-1.5 sm:gap-2 mb-2 px-1 overflow-x-auto" id="rating-stars-container">
+                        <button onclick="setRating(1)" class="p-1 sm:p-1.5 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(2)" class="p-1 sm:p-1.5 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(3)" class="p-1 sm:p-1.5 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(4)" class="p-1 sm:p-1.5 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 fill-slate-300 star-icon"></i></button>
+                        <button onclick="setRating(5)" class="p-1 sm:p-1.5 hover:bg-slate-100 rounded-full transition flex-shrink-0"><i data-lucide="star" class="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 fill-slate-300 star-icon"></i></button>
                     </div>
-                    <div class="text-center h-5 mb-1">
-                        <span id="rating-text" class="text-xs font-bold text-yellow-500 opacity-0 transition-opacity">Rất hài lòng</span>
+                    <div class="text-center h-4 mb-0.5">
+                        <span id="rating-text" class="text-[10px] font-bold text-yellow-500 opacity-0 transition-opacity">Rất hài lòng</span>
                     </div>
                 </div>
 
                 <!-- Reason Block (Hidden by default) -->
-                <div id="rating-reason-block" class="bg-yellow-50 rounded-2xl p-3 sm:p-4 border border-yellow-100 mt-3 sm:mt-4 hidden">
+                <div id="rating-reason-block" class="bg-yellow-50 rounded-xl p-2.5 sm:p-3 border border-yellow-100 mt-2 sm:mt-3 hidden">
                     <div class="flex items-center gap-2 mb-3">
                         <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-orange-600 flex-shrink-0">
                             <i data-lucide="alert-circle" class="w-4 h-4"></i>
@@ -1102,15 +1102,15 @@
                             
                             <div class="space-y-3 mb-4">
                                 <label class="flex items-center space-x-3 cursor-pointer">
-                                    <input type="radio" name="searchType" value="Mã hợp đồng" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" checked onchange="updateSearchPlaceholder(this.value)">
+                                    <input type="radio" name="searchType" value="Mã hợp đồng" class="w-3.5 h-3.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel" checked onchange="updateSearchPlaceholder(this.value)">
                                     <span class="text-xs font-bold text-slate-700">Mã hợp đồng</span>
                                 </label>
                                 <label class="flex items-center space-x-3 cursor-pointer">
-                                    <input type="radio" name="searchType" value="Số thuê bao" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
+                                    <input type="radio" name="searchType" value="Số thuê bao" class="w-3.5 h-3.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
                                     <span class="text-xs font-bold text-slate-700">Số thuê bao</span>
                                 </label>
                                 <label class="flex items-center space-x-3 cursor-pointer">
-                                    <input type="radio" name="searchType" value="CCCD" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
+                                    <input type="radio" name="searchType" value="CCCD" class="w-3.5 h-3.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
                                     <span class="text-xs font-bold text-slate-700">CCCD</span>
                                 </label>
                             </div>
