@@ -627,8 +627,16 @@
                             <h3 class="text-[15px] font-bold text-slate-900">Tiện ích Di động</h3>
                         </div>
                         <div class="flex overflow-x-auto no-scrollbar gap-2 px-3 pb-2 snap-x">
-                            
-                            <!-- 1. Tài khoản thanh toán -->
+
+                            <!-- 1. Tra cứu hợp đồng (moved to top) -->
+                            <button onclick="navigateToContractScreenMobile()" class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
+                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative bg-pink-50 rounded-full border border-pink-100">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-viettel stroke-[2]"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-viettel leading-tight text-center">Tra cứu<br>hợp đồng</span>
+                            </button>
+
+                            <!-- 2. Tài khoản thanh toán -->
                             <button class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
                                 <div class="w-10 h-10 flex items-center justify-center mb-1 relative">
                                     <i data-lucide="circle-user" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
@@ -703,14 +711,6 @@
                                     <i data-lucide="file-pen-line" class="w-6 h-6 text-slate-800 stroke-[1.5]"></i>
                                 </div>
                                 <span class="text-[11px] font-medium text-slate-700 leading-tight text-center">Đăng ký<br>thông tin</span>
-                            </button>
-
-                            <!-- 10. Tra cứu hợp đồng (Custom Added) -->
-                            <button onclick="navigateToContractScreenMobile()" class="group flex flex-col items-center flex-shrink-0 snap-start w-[72px]">
-                                <div class="w-10 h-10 flex items-center justify-center mb-1 relative bg-pink-50 rounded-full border border-pink-100">
-                                    <i data-lucide="file-text" class="w-5 h-5 text-viettel stroke-[2]"></i>
-                                </div>
-                                <span class="text-[11px] font-bold text-viettel leading-tight text-center">Tra cứu<br>hợp đồng</span>
                             </button>
 
                         </div>
