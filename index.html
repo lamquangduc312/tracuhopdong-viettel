@@ -1853,10 +1853,7 @@
             document.getElementById('standard-view').classList.remove('hidden');
             document.getElementById('contract-summary-box').classList.remove('hidden');
             
-            // Giả lập dữ liệu trả về cho số mới tìm kiếm (lấy form cố định hoặc di động)
-            currentSubscriber = 'mobile_prepaid'; 
-            document.getElementById('contract-number-text').innerText = "91827364";
-            document.getElementById('subscriber-select').value = 'other';
+            
             updateDossierRequiredBanner();
             renderDocuments();
         }
@@ -1968,7 +1965,7 @@
                 return matchCat && matchAction && matchSearch;
             });
 
-            document.getElementById('count-all').innerText = filtered.length;
+            const countAll = document.getElementById('count-all'); if(countAll) countAll.innerText = filtered.length;
 
             if (filtered.length === 0) {
                 container.innerHTML = `
