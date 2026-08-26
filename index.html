@@ -1631,6 +1631,32 @@
                     typeText: "Phiếu YC thay đổi dịch vụ trả sau",
                     desc: "Phiếu yêu cầu thay đổi dịch vụ viễn thông di động mặt đất hình thức thanh toán trả sau (BM01.TĐTS.CN)",
                     pdfTitle: "PHIẾU YÊU CẦU THAY ĐỔI DỊCH VỤ VIỄN THÔNG DI ĐỘNG MẶT ĐẤT HÌNH THỨC THANH TOÁN TRẢ SAU (BM01.TĐTS.CN)"
+                },
+                {
+                    id: "DOC-MS05",
+                    cat: "bbnt",
+                    action: "dau_noi_ts",
+                    title: "Biên bản nghiệm thu",
+                    code: "BBNT/0988123456-2023",
+                    date: "10/01/2023",
+                    status: "Đã hoàn thành",
+                    statusColor: "slate",
+                    typeText: "Biên bản nghiệm thu",
+                    desc: "Biên bản nghiệm thu bàn giao thiết bị và dịch vụ viễn thông",
+                    pdfTitle: "BIÊN BẢN NGHIỆM THU DỊCH VỤ VIỄN THÔNG"
+                },
+                {
+                    id: "DOC-MS06",
+                    cat: "dlcn",
+                    action: "dau_noi_ts",
+                    title: "Biên bản xác nhận xử lý dữ liệu cá nhân",
+                    code: "XNDLCN/0988123456-2023",
+                    date: "10/01/2023",
+                    status: "Đã xác nhận",
+                    statusColor: "emerald",
+                    typeText: "Xử lý dữ liệu cá nhân",
+                    desc: "Biên bản xác nhận sự đồng ý của khách hàng về việc xử lý dữ liệu cá nhân",
+                    pdfTitle: "BIÊN BẢN XÁC NHẬN XỬ LÝ DỮ LIỆU CÁ NHÂN"
                 }
             ],
             tv: [
@@ -1928,7 +1954,7 @@
                 // Filter by category group (2 main categories)
                 let matchCat = false;
                 if (currentCategory === 'hopdong') {
-                    matchCat = doc.cat === 'hd' || doc.cat === 'pl';
+                    matchCat = doc.cat === 'hd' || doc.cat === 'pl' || doc.cat === 'bbnt';
                 } else if (currentCategory === 'hosokac') {
                     matchCat = doc.cat === 'pyc' || doc.cat === 'dlcn';
                 } else {
@@ -1966,12 +1992,14 @@
                 if (doc.cat === 'pl') catIcon = "📎";
                 if (doc.cat === 'pyc') catIcon = "📋";
                 if (doc.cat === 'dlcn') catIcon = "🔒";
+                if (doc.cat === 'bbnt') catIcon = "✔️";
 
                 // Determine category color
                 let categoryColor = "bg-blue-50 text-blue-700 border-blue-200";
                 if (doc.cat === 'pl') categoryColor = "bg-amber-50 text-amber-700 border-amber-200";
                 if (doc.cat === 'pyc') categoryColor = "bg-purple-50 text-purple-700 border-purple-200";
                 if (doc.cat === 'dlcn') categoryColor = "bg-rose-50 text-rose-700 border-rose-200";
+                if (doc.cat === 'bbnt') categoryColor = "bg-teal-50 text-teal-700 border-teal-200";
 
                 return `
                     <div class="bg-white rounded-[20px] p-4 sm:p-4 border border-slate-200 shadow-sm hover:shadow-lg transition-all active:scale-98">
