@@ -873,6 +873,8 @@
                             <button id="btn-acc-tab-tv360" onclick="switchAccountTab('tv360')" class="pb-3 text-[14px] font-medium text-slate-500 border-b-2 border-transparent">TV360</button>
                             <button id="btn-acc-tab-camera" onclick="switchAccountTab('camera')" class="pb-3 text-[14px] font-medium text-slate-500 border-b-2 border-transparent">Camera</button>
                             <button id="btn-acc-tab-mysign" onclick="switchAccountTab('mysign')" class="pb-3 text-[14px] font-medium text-slate-500 border-b-2 border-transparent">MySign</button>
+                            <button id="btn-acc-tab-vcontract" onclick="switchAccountTab('vcontract')" class="pb-3 text-[14px] font-medium text-slate-500 border-b-2 border-transparent">vContract</button>
+                            <button id="btn-acc-tab-vpost" onclick="switchAccountTab('vpost')" class="pb-3 text-[14px] font-medium text-slate-500 border-b-2 border-transparent">Viettel Post</button>
                         </div>
                     </div>
                 </div>
@@ -906,6 +908,16 @@
                     </div>
 
                     
+                    
+                    <!-- MYSIGN TAB CONTENT -->
+                    <div id="acc-content-mysign" class="space-y-3 hidden">
+                        <!-- Card -->
+                        <div class="bg-white rounded-2xl p-4 flex items-center gap-3 shadow-sm border border-slate-100">
+                            <i data-lucide="pen-tool" class="w-5 h-5 text-viettel fill-viettel"></i>
+                            <div class="text-[14px] font-bold text-slate-900">Tài khoản 00108204XXXX</div>
+                        </div>
+                    </div>
+
                     <!-- TV360 TAB CONTENT -->
                     <div id="acc-content-tv360" class="space-y-3 hidden">
                         <!-- Card 1 -->
@@ -2016,7 +2028,7 @@
         }
 
         function switchAccountTab(tab) {
-            const tabs = ['mobile', 'internet', 'tv', 'tv360', 'camera', 'mysign'];
+            const tabs = ['mobile', 'internet', 'tv', 'tv360', 'camera', 'mysign', 'vcontract', 'vpost'];
             tabs.forEach(t => {
                 const btn = document.getElementById('btn-acc-tab-' + t);
                 const content = document.getElementById('acc-content-' + t);
