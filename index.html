@@ -1472,7 +1472,7 @@
                     </div>
                     <div>
                         <h3 id="modal-doc-title" class="text-xs font-bold truncate max-w-[210px]">Phiếu yêu cầu Trả trước (Đăng ký...</h3>
-                        <p id="modal-doc-code" class="text-[9px] text-slate-300 font-medium">Số hợp đồng: PYC-TT/0986668888-2023</p>
+                        <p id="modal-doc-code" class="text-[9px] text-slate-300 font-medium">Mã VB: PYC-TT/0986668888-2023</p>
                     </div>
                 </div>
                 <button onclick="closePdfModal()" class="w-8 h-8 rounded-full bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white flex items-center justify-center transition">
@@ -2204,7 +2204,7 @@
                         <!-- Meta Info: Code & Date -->
                         <div class="mb-3 pt-2 border-t border-slate-100 space-y-1">
                             <div class="flex items-center text-[11px] text-slate-600">
-                                <span class="font-semibold text-slate-700 mr-1">Số hợp đồng:</span>
+                                <span class="font-semibold text-slate-700 mr-1">Mã VB:</span>
                                 <span class="font-mono text-slate-800">${doc.code}</span>
                             </div>
                             <div class="flex items-center text-[11px] text-slate-600">
@@ -2247,7 +2247,7 @@
 
                 // Update modal content
                 document.getElementById('modal-doc-title').innerText = found.title;
-                document.getElementById('modal-doc-code').innerText = "Số hợp đồng: " + found.code;
+                document.getElementById('modal-doc-code').innerText = "Mã VB: " + found.code;
                 document.getElementById('modal-pdf-heading').innerText = found.pdfTitle;
                 document.getElementById('modal-pdf-subheading').innerText = "Số: " + found.code;
 
@@ -2282,7 +2282,7 @@
 
             if(found) {
                 // Tạo thông báo download
-                const downloadMsg = `📥 ĐANG TẢI: ${found.title}\n\nSố hợp đồng: ${found.code}\nNgày lập: ${found.date}\n\n✅ File PDF sẽ được lưu vào thư mục Downloads của bạn.`;
+                const downloadMsg = `📥 ĐANG TẢI: ${found.title}\n\nMã VB: ${found.code}\nNgày lập: ${found.date}\n\n✅ File PDF sẽ được lưu vào thư mục Downloads của bạn.`;
                 alert(downloadMsg);
 
                 // Log để debug
@@ -2297,9 +2297,9 @@
         // Download PDF from modal viewer
         function downloadPdfFromModal() {
             const title = document.getElementById('modal-doc-title').innerText;
-            const code = document.getElementById('modal-doc-code').innerText.replace('Số hợp đồng: ', '').replace(/\//g, '-');
+            const code = document.getElementById('modal-doc-code').innerText.replace('Mã VB: ', '').replace(/\//g, '-');
 
-            const downloadMsg = `📥 ĐANG TẢI: ${title}\n\nSố hợp đồng: ${code}\n\n✅ File PDF sẽ được lưu vào thư mục Downloads của bạn.`;
+            const downloadMsg = `📥 ĐANG TẢI: ${title}\n\nMã VB: ${code}\n\n✅ File PDF sẽ được lưu vào thư mục Downloads của bạn.`;
             alert(downloadMsg);
 
             console.log('Download from modal:', { title, code });
