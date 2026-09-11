@@ -1144,6 +1144,46 @@
                         </div>
                     </div>
 
+                    
+                    <!-- SELECT PHONE FORM (CÁCH 1) -->
+                    <div id="select-phone-form" class="hidden space-y-3">
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i data-lucide="smartphone" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-sm font-black text-slate-800 text-center mb-1">Chọn số nhận OTP</h3>
+                            <p class="text-[11px] text-slate-500 text-center mb-4 leading-relaxed">
+                                Vui lòng chọn một trong các số điện thoại liên hệ dưới đây để nhận mã xác thực.
+                            </p>
+                            
+                            <div class="space-y-2 mb-4">
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="otpPhone" value="098***8785" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel" checked>
+                                        <span class="text-[13px] font-bold text-slate-700">098***8785</span>
+                                    </div>
+                                    <div class="w-2 h-2 rounded-full bg-viettel"></div>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="otpPhone" value="034***1122" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                                        <span class="text-[13px] font-bold text-slate-700">034***1122</span>
+                                    </div>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="otpPhone" value="086***9999" class="w-4 h-4 text-viettel border-slate-300 focus:ring-viettel accent-viettel">
+                                        <span class="text-[13px] font-bold text-slate-700">086***9999</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <button onclick="handleSendOTP()" class="w-full py-3 bg-viettel text-white text-sm font-bold rounded-xl shadow-md shadow-red-200 hover:bg-viettel-dark transition-all active:scale-95">
+                                Gửi mã OTP
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- OTP FORM -->
                     <div id="otp-form" class="hidden bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center space-y-4">
                         <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-1">
@@ -1151,7 +1191,7 @@
                         </div>
                         <h3 class="text-sm font-black text-slate-800">Xác thực OTP</h3>
                         <p class="text-[11px] text-slate-500 px-2 leading-relaxed">
-                            Mã xác thực đã được gửi về số điện thoại <b class="text-slate-700">098***888</b>. Vui lòng nhập mã để xem hồ sơ.
+                            Mã xác thực đã được gửi về số điện thoại <b id="otp-phone-display" class="text-slate-700">098***888</b>. Vui lòng nhập mã để xem hồ sơ.
                         </p>
                         <div class="flex justify-center gap-3 my-4">
                             <input type="text" maxlength="1" inputmode="numeric" class="w-12 h-12 text-center text-lg font-black border-2 border-slate-200 rounded-xl focus:border-viettel focus:ring-2 focus:ring-viettel/20 outline-none bg-white transition-all" autofocus>
