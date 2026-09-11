@@ -55,3 +55,6 @@ Xong! Giờ đây trang web của bạn đã sống (live) và có tốc độ t
 
 ---
 *Dự án được xây dựng và hỗ trợ bởi Antigravity AI.*
+
+## 📖 Tài Liệu Nghiệp Vụ
+Để hiểu rõ hơn về các luồng xử lý nghiệp vụ phức tạp của tính năng Tra cứu hợp đồng (đặc biệt là quy tắc định tuyến gửi mã OTP bảo mật dựa trên các phương thức tra cứu: CCCD, Mã hợp đồng, Số thuê bao, Số liên hệ), vui lòng xem tại file **[TAI_LIEU_NGHIEP_VU_OTP.md](./TAI_LIEU_NGHIEP_VU_OTP.md)**.
