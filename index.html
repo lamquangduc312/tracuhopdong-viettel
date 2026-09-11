@@ -1099,6 +1099,10 @@
                                     <span class="text-xs font-bold text-slate-700">Số thuê bao</span>
                                 </label>
                                 <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="searchType" value="Số liên hệ" class="w-3.5 h-3.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
+                                    <span class="text-xs font-bold text-slate-700">Số liên hệ</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
                                     <input type="radio" name="searchType" value="CCCD" class="w-3.5 h-3.5 text-viettel border-slate-300 focus:ring-viettel accent-viettel" onchange="updateSearchPlaceholder(this.value)">
                                     <span class="text-xs font-bold text-slate-700">CCCD</span>
                                 </label>
@@ -1123,7 +1127,8 @@
                                 <div class="pl-4 space-y-1.5 text-[10.5px]">
                                     <div><b>1. Mã hợp đồng:</b> Mã hợp đồng DV di động trả sau hoặc DV Internet.</div>
                                     <div><b>2. Số thuê bao:</b> Số di động trả sau hoặc mã tài khoản DV Internet.</div>
-                                    <div><b>3. CCCD:</b> Số căn cước công dân hòa mạng DV di động hoặc DV Internet.</div>
+                                    <div><b>3. Số liên hệ:</b> Số điện thoại liên hệ gắn trên các hợp đồng.</div>
+                                    <div><b>4. CCCD:</b> Số căn cước công dân hòa mạng DV di động hoặc DV Internet.</div>
                                 </div>
                                 <div class="flex items-start gap-1.5 pt-1">
                                     <span class="mt-0.5">•</span>
@@ -1991,8 +1996,10 @@
         // Xử lý đổi Placeholder khi chọn radio
         function updateSearchPlaceholder(val) {
             const input = document.getElementById('other-input');
-            input.placeholder = "Nhập " + val.toLowerCase() + " *";
-            checkFormValid();
+            if (val === 'Mã hợp đồng') input.placeholder = 'Nhập mã hợp đồng *';
+            else if (val === 'Số thuê bao') input.placeholder = 'Nhập số thuê bao *';
+            else if (val === 'Số liên hệ') input.placeholder = 'Nhập số điện thoại liên hệ *';
+            else if (val === 'CCCD') input.placeholder = 'Nhập CCCD *';
         }
 
         // Bật/tắt nút Tra cứu nếu có nhập liệu
