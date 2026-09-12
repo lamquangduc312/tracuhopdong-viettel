@@ -1,39 +1,43 @@
 # Tài Liệu Nghiệp Vụ - Tính Năng Tra Cứu Hợp Đồng
 
-Tài liệu này mô tả các luồng nghiệp vụ chính của tính năng Tra cứu Hợp đồng và Hồ sơ trên ứng dụng Viettel Tammi.
+Tài liệu này mô tả các luồng nghiệp vụ chính của tính năng Tra cứu Hợp đồng và Hồ sơ trên ứng dụng Viettel Tammi. Luồng tra cứu được thiết kế rẽ nhánh dựa trên trạng thái đăng nhập của khách hàng nhằm tối ưu trải nghiệm và bảo mật.
 
-## 1. Các hình thức tra cứu hỗ trợ
-Khách hàng có thể tra cứu thông tin hợp đồng và hồ sơ điện tử thông qua 3 hình thức:
-- **Mã hợp đồng:** Dành cho hợp đồng DV di động trả sau hoặc DV Internet.
-- **Số thuê bao:** Số di động trả sau hoặc mã tài khoản DV Internet.
-- **CCCD:** Số căn cước công dân hòa mạng DV di động hoặc DV Internet.
-- **Số liên hệ:** Số điện thoại được đăng ký làm số liên hệ cho các hợp đồng Viettel.
+## Phần 1: Khách hàng CHƯA ĐĂNG NHẬP App Viettel Tammi (Khách vãng lai)
 
-## 2. Quy tắc định tuyến Mã Xác Thực (OTP)
+Khi khách hàng chưa đăng nhập, hệ thống không có ngữ cảnh về danh tính người dùng. Do đó, **bắt buộc phải qua bước xác thực OTP** để chứng minh quyền sở hữu đối với thông tin cần tra cứu.
 
-Nhằm đảm bảo tính bảo mật (xác thực chính chủ) và tối ưu hóa trải nghiệm người dùng, hệ thống áp dụng các quy tắc gửi OTP linh hoạt tùy theo phương thức tra cứu mà khách hàng lựa chọn:
+### 1. Tra cứu bằng "Số thuê bao" hoặc "Số liên hệ"
+- **Luồng xử lý:** Khách hàng nhập đích danh số điện thoại (Số thuê bao hoặc Số liên hệ). Hệ thống tự động gửi thẳng mã OTP về chính số điện thoại vừa nhập.
+- **Trải nghiệm (UX):** Chuyển trực tiếp sang màn hình nhập OTP với thông báo: *"Mã xác thực đã được gửi về số điện thoại [Số vừa nhập]"*. 
+- **Kết quả:** Sau khi nhập đúng OTP, hệ thống trả về hồ sơ của thuê bao đó (nếu tra Số thuê bao) hoặc trả về **tất cả** các hợp đồng gắn với số điện thoại đó (nếu tra Số liên hệ).
 
-### 2.1. Tra cứu bằng "Số thuê bao"
-- **Luồng xử lý:** Hệ thống tự động gửi thẳng mã OTP về chính **Số thuê bao** mà khách hàng vừa nhập.
-- **Giao diện:** Chuyển trực tiếp sang màn hình nhập OTP với thông báo: *"Mã xác thực đã được gửi về số điện thoại [Số thuê bao đang nhập]"*.
+### 2. Tra cứu bằng "Mã hợp đồng"
+- **Luồng xử lý:** Hệ thống trích xuất "Số điện thoại đại diện/liên hệ chính" được lưu trên hợp đồng đó và tự động gửi mã OTP về số điện thoại này.
+- **Trải nghiệm (UX):** Chuyển sang màn hình nhập OTP, hiển thị số điện thoại nhận mã đã được che mờ (VD: `098***8785`). Không yêu cầu khách hàng thao tác chọn số để rút ngắn thời gian.
 
-### 2.2. Tra cứu bằng "Số liên hệ"
-- **Đặc thù:** Một số điện thoại liên hệ có thể được dùng chung cho nhiều hợp đồng khác nhau (Ví dụ: 1 hợp đồng di động trả sau, 1 hợp đồng Internet, 1 Camera).
-- **Luồng xử lý:** Tương tự Số thuê bao, hệ thống gửi thẳng mã OTP về chính **Số liên hệ** mà khách hàng vừa nhập.
-- **Sau khi xác thực thành công:** Hệ thống sẽ truy vấn và trả về danh sách **TẤT CẢ** các hợp đồng và hồ sơ có gắn với Số liên hệ này (bao gồm cả Di động, Internet...). Khách hàng có thể xem tập trung trên một giao diện danh sách mà không cần tra cứu nhiều lần.
-
-### 2.3. Tra cứu bằng "Mã hợp đồng"
-- **Luồng xử lý (Hướng A):** Hệ thống lấy thông tin **"Số điện thoại đại diện/liên hệ chính"** được lưu trên hợp đồng đó và tự động gửi mã OTP về số điện thoại đại diện này.
-- **Giao diện:** Chuyển sang màn hình nhập OTP, hiển thị số điện thoại nhận mã đã được che mờ (VD: `098***8785`) để khách hàng nhận biết. Không yêu cầu khách hàng thao tác chọn số nhằm rút ngắn thời gian.
-
-### 2.4. Tra cứu bằng "CCCD" (Căn cước công dân)
-- **Đặc thù:** Một CCCD thường đứng tên nhiều hợp đồng và có thể có nhiều số điện thoại liên hệ khác nhau.
-- **Luồng xử lý:** 
+### 3. Tra cứu bằng "CCCD" (Căn cước công dân)
+- **Đặc thù:** Một CCCD thường đứng tên nhiều hợp đồng và có thể đăng ký nhiều số điện thoại liên hệ khác nhau.
+- **Luồng xử lý:**
   1. Khách hàng nhập CCCD và bấm Lấy thông tin.
-  2. Hệ thống hiển thị **Màn hình chọn số nhận OTP** (danh sách các số liên hệ được che mờ, VD: `098***8785`, `034***1122`).
-  3. Khách hàng chủ động click chọn một số điện thoại mà họ đang cầm để nhận mã.
+  2. Hệ thống truy xuất và hiển thị **Màn hình chọn số nhận OTP** (danh sách các số liên hệ được che mờ, VD: `098***8785`, `034***1122`).
+  3. Khách hàng chủ động chọn một số điện thoại đang cầm để nhận mã.
   4. Hệ thống gửi OTP về số đã chọn và chuyển sang màn hình nhập OTP.
-- **Ưu điểm:** Khách hàng chủ động hoàn toàn, tránh trường hợp gửi OTP vào một sim phụ mà khách hàng không mang theo bên người.
+
+---
+
+## Phần 2: Khách hàng ĐÃ ĐĂNG NHẬP App Viettel Tammi (Tài khoản chính chủ)
+
+Khi khách hàng đã đăng nhập, hệ thống đã xác thực được danh tính thông qua thông tin phiên đăng nhập (SĐT đăng nhập và CCCD liên kết).
+
+### 1. Luồng xem tự động (Auto-fetching) - Không cần OTP
+- **Luồng xử lý:** Ngay khi khách hàng truy cập vào tính năng "Tra cứu hợp đồng & hồ sơ", hệ thống **tự động truy vấn** toàn bộ các hợp đồng, chứng từ thuộc sở hữu của số điện thoại đang đăng nhập và CCCD gắn với tài khoản đó.
+- **Trải nghiệm (UX):** Khách hàng vào là thấy ngay danh sách hợp đồng của mình, được phân loại rõ ràng theo từng tab (Di động, Internet, Truyền hình...). **Hoàn toàn không bị làm phiền bởi các bước nhập mã hay OTP.**
+
+### 2. Luồng tra cứu hộ / Tra cứu bằng tài khoản khác (Cần xác thực chéo)
+- **Đặc thù:** Khách hàng muốn tra cứu hợp đồng của người thân (bố mẹ, vợ/chồng) hoặc một hợp đồng công ty không đứng tên cá nhân. Khách hàng sẽ chọn chức năng "Tra cứu tài khoản khác".
+- **Luồng xử lý:** Khách hàng nhập các tiêu chí (CCCD, Số thuê bao, v.v.) của người thân.
+  - **Kiểm tra thông minh (Smart Routing):** Hệ thống sẽ kiểm tra xem thông tin vừa nhập có vô tình trùng khớp với dữ liệu của người đang đăng nhập hay không. Nếu CÓ, bỏ qua OTP và hiện kết quả ngay.
+  - **Xác thực OTP (Xuyên chéo):** Nếu KHÔNG trùng khớp, hệ thống áp dụng lại các quy tắc định tuyến OTP y hệt như Phần 1 (Gửi OTP về SĐT người thân hoặc cho phép chọn số). Người đang thao tác trên App phải liên hệ người thân để lấy mã OTP nhập vào.
 
 ---
 *Cập nhật lần cuối: Tháng 9/2026*
