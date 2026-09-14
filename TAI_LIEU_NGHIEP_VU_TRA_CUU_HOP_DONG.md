@@ -2,6 +2,23 @@
 
 Tài liệu này mô tả các luồng nghiệp vụ chính của tính năng Tra cứu Hợp đồng và Hồ sơ trên ứng dụng Viettel Tammi. Luồng tra cứu được thiết kế rẽ nhánh dựa trên trạng thái đăng nhập của khách hàng nhằm tối ưu trải nghiệm và bảo mật.
 
+## Phần 0: Giao diện Form Nhập Thông Tin Tra Cứu (Trang chủ)
+
+Để hỗ trợ khách hàng thao tác dễ dàng và minh bạch, ngay trên giao diện màn hình Tra cứu Hợp đồng, hệ thống sẽ hiển thị một khối **Hướng dẫn** với nội dung cụ thể như sau:
+
+> **Hướng dẫn**
+> - Bạn nhập 1 trong các thông tin sau để tra cứu thông tin hợp đồng:
+>   1. **Mã hợp đồng:** Mã hợp đồng DV di động trả sau hoặc DV Internet.
+>   2. **Số thuê bao:** Số di động trả sau hoặc mã tài khoản DV Internet.
+>   3. **Số liên hệ:** Số điện thoại liên hệ gắn trên các hợp đồng.
+>   4. **CCCD:** Số căn cước công dân hòa mạng DV di động hoặc DV Internet.
+> - **Nhập thông tin** tương ứng.
+> - Xác thực **OTP**.
+
+Quy tắc UX: Khối hướng dẫn này hiển thị cố định bên dưới ô nhập liệu để khách hàng luôn có thể tham chiếu mà không cần rời khỏi màn hình.
+
+---
+
 ## Phần 1: Khách hàng CHƯA ĐĂNG NHẬP App Viettel Tammi (Khách vãng lai)
 
 Khi khách hàng chưa đăng nhập, hệ thống không có ngữ cảnh về danh tính người dùng. Do đó, **bắt buộc phải qua bước xác thực OTP** để chứng minh quyền sở hữu đối với thông tin cần tra cứu.
