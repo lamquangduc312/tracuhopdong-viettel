@@ -26,8 +26,9 @@ Khi khách hàng chưa đăng nhập, hệ thống không có ngữ cảnh về 
 ### 4. Cấu hình nội dung tin nhắn OTP (Brandname VTSHOP)
 - Khi khách hàng thực hiện các thao tác yêu cầu xác thực ở luồng chưa đăng nhập, hệ thống sẽ gửi SMS từ đầu số (brandname) **VTSHOP**.
 - **Cấu trúc nội dung SMS:** 
-  > `[VTSHOP] <Mã_OTP> la ma xac thuc de tra cuu Hop dong tren ung dung Viettel Tammi. Ma co hieu luc trong 2 phut. Vui long khong cung cap ma nay cho bat ky ai.`
-- **Thời gian chờ (Timeout):** 120 giây.
+  > `[VTSHOP] <Mã_OTP> la ma xac thuc de tra cuu Hop dong tren ung dung Viettel Tammi. Ma co hieu luc trong 5 phut. Vui long khong cung cap ma nay cho bat ky ai.`
+- **Thời gian hiệu lực OTP (Timeout):** 5 phút (300 giây).
+- **Thời gian chờ gửi lại mã (Resend cooldown):** 60 giây.
 
 
 ## Phần 3: Cấu trúc hiển thị Kết Quả Tra Cứu (Áp dụng chung cho cả luồng Đã đăng nhập và Chưa đăng nhập)
@@ -93,7 +94,7 @@ Nằm ở vị trí trên cùng của màn hình kết quả, giúp khách hàng
 - **Trải nghiệm (UX):** Khi nhập sai ở lần thứ 5, hiển thị thông báo: *"Bạn đã nhập sai mã OTP quá 5 lần. Vui lòng thử lại sau 15 phút."* Đồng thời vô hiệu hóa (disable) nút Xác nhận và nút Gửi lại mã.
 
 ### 4. Mã OTP hết hiệu lực (Timeout)
-- **Quy tắc:** Mỗi mã OTP được gửi ra chỉ có hiệu lực trong vòng 120 giây. Thời gian đếm ngược (countdown) được hiển thị trên giao diện.
+- **Quy tắc:** Mỗi mã OTP được gửi ra chỉ có hiệu lực trong vòng 5 phút (300 giây). Thời gian đếm ngược (countdown) được hiển thị trên giao diện.
 - **Trải nghiệm (UX):** Khi đồng hồ đếm ngược về 00:00, nếu khách hàng vẫn nhập mã cũ và bấm xác nhận, hệ thống báo lỗi: *"Mã OTP đã hết hạn, vui lòng yêu cầu gửi lại mã mới."*
 
 
