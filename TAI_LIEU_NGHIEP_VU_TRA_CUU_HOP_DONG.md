@@ -1,4 +1,4 @@
-# Tài Liệu Nghiệp Vụ - Tính Năng Tra Cứu Hợp Đồng
+﻿# Tài Liệu Nghiệp Vụ - Tính Năng Tra Cứu Hợp Đồng
 
 Tài liệu này mô tả các luồng nghiệp vụ chính của tính năng Tra cứu Hợp đồng và Hồ sơ trên ứng dụng Viettel Tammi. Luồng tra cứu được thiết kế rẽ nhánh dựa trên trạng thái đăng nhập của khách hàng nhằm tối ưu trải nghiệm và bảo mật.
 
