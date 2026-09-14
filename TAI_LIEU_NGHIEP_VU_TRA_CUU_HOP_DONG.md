@@ -8,7 +8,7 @@ Khi khách hàng chưa đăng nhập, hệ thống không có ngữ cảnh về 
 
 ### 1. Tra cứu bằng "Số thuê bao" hoặc "Số liên hệ"
 - **Luồng xử lý:** Khách hàng nhập đích danh số điện thoại (Số thuê bao hoặc Số liên hệ). Hệ thống tự động gửi thẳng mã OTP về chính số điện thoại vừa nhập.
-- **Trải nghiệm (UX):** Chuyển trực tiếp sang màn hình nhập OTP với thông báo: *"Mã xác thực đã được gửi về số điện thoại [Số vừa nhập]"*. 
+- **Trải nghiệm (UX):** Hiển thị Popup nhập OTP trên app Viettel Tammi kèm nội dung: *"Vui lòng nhập OTP được gửi về số [Số vừa nhập] để tra cứu hợp đồng"*. Kèm thời gian nhắc nhở đếm ngược *"Mã OTP hết hạn sau xx:xx"*. 
 - **Kết quả:** Sau khi nhập đúng OTP, hệ thống trả về hồ sơ của thuê bao đó (nếu tra Số thuê bao) hoặc trả về **tất cả** các hợp đồng gắn với số điện thoại đó (nếu tra Số liên hệ).
 
 ### 2. Tra cứu bằng "Mã hợp đồng"
