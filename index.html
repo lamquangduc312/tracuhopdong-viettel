@@ -1698,6 +1698,27 @@
 
             
             <div id="tracuu-donhang-list" class="flex-1 overflow-y-auto no-scrollbar p-4 space-y-3 pb-8">
+                
+                <!-- Order Card: Chờ triển khai 3 (Combo Internet Camera) -->
+                <div class="bg-white rounded-2xl p-4 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="text-[12px] text-slate-500 font-medium">09:00 • 31/09/2025</div>
+                        <div class="bg-blue-50 border border-blue-100 text-blue-500 px-2.5 py-0.5 rounded-full text-[11px] font-bold flex items-center space-x-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                            <span>Chờ triển khai</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-900 text-[15px]">Đăng ký Combo Internet Camera</h3>
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="text-[12px] text-slate-500">Mã đơn hàng: 6196411852</div>
+                    </div>
+                    <button onclick="openChiTietYeuCau('camera', 'confirm')" class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition active:scale-95">
+                        Xác nhận lịch hẹn đơn từ Nhân viên
+                    </button>
+                </div>
+
                 <!-- Order Card: Chờ triển khai 1 -->
                 <div class="bg-white rounded-2xl p-4 shadow-sm">
                     <div class="flex justify-between items-start mb-2">
@@ -1713,7 +1734,7 @@
                     <div class="flex justify-between items-center mb-3">
                         <div class="text-[12px] text-slate-500">Mã đơn hàng: 6196411852</div>
                     </div>
-                    <button class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition">
+                    <button onclick="openChiTietYeuCau('internet', 'confirm')" class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition active:scale-95">
                         Xác nhận lịch hẹn
                     </button>
                 </div>
@@ -1733,7 +1754,68 @@
                     <div class="flex justify-between items-center mb-3">
                         <div class="text-[12px] text-slate-500">Mã đơn hàng: 6196411852</div>
                     </div>
-                    <button class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition">
+                    <button onclick="openChiTietYeuCau('combo', 'confirm')" class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition active:scale-95">
+                        Xác nhận lịch hẹn đơn từ Nhân viên
+                    </button>
+                </div>
+
+                
+                <!-- Order Card: Chờ triển khai (Internet) - Huỷ -->
+                <div class="bg-white rounded-2xl p-4 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="text-[12px] text-slate-500 font-medium">09:00 • 31/09/2025</div>
+                        <div class="bg-blue-50 border border-blue-100 text-blue-500 px-2.5 py-0.5 rounded-full text-[11px] font-bold flex items-center space-x-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                            <span>Chờ triển khai</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-900 text-[15px]">Đăng ký Internet</h3>
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="text-[12px] text-slate-500">Mã đơn hàng: 6196411853</div>
+                    </div>
+                    <button onclick="openChiTietYeuCau('internet', 'cancel')" class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition active:scale-95">
+                        Xác nhận huỷ đơn từ Nhân viên
+                    </button>
+                </div>
+
+                <!-- Order Card: Chờ triển khai (Combo TV360) - Huỷ -->
+                <div class="bg-white rounded-2xl p-4 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="text-[12px] text-slate-500 font-medium">09:00 • 31/09/2025</div>
+                        <div class="bg-blue-50 border border-blue-100 text-blue-500 px-2.5 py-0.5 rounded-full text-[11px] font-bold flex items-center space-x-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                            <span>Chờ triển khai</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-900 text-[15px]">Đăng ký Combo Internet TV360</h3>
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="text-[12px] text-slate-500">Mã đơn hàng: 6196411854</div>
+                    </div>
+                    <button onclick="openChiTietYeuCau('combo', 'cancel')" class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition active:scale-95">
+                        Xác nhận huỷ đơn từ Nhân viên
+                    </button>
+                </div>
+
+                <!-- Order Card: Chờ triển khai (Combo Camera) - Huỷ -->
+                <div class="bg-white rounded-2xl p-4 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="text-[12px] text-slate-500 font-medium">09:00 • 31/09/2025</div>
+                        <div class="bg-blue-50 border border-blue-100 text-blue-500 px-2.5 py-0.5 rounded-full text-[11px] font-bold flex items-center space-x-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                            <span>Chờ triển khai</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-900 text-[15px]">Đăng ký Combo Internet Camera</h3>
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="text-[12px] text-slate-500">Mã đơn hàng: 6196411855</div>
+                    </div>
+                    <button onclick="openChiTietYeuCau('camera', 'cancel')" class="w-full h-10 border border-slate-300 rounded-full text-slate-800 text-[13px] font-bold hover:bg-slate-50 transition active:scale-95">
                         Xác nhận huỷ đơn từ Nhân viên
                     </button>
                 </div>
@@ -1859,6 +1941,253 @@
 
         </div>
     </div>
+    
+    <!-- CHI TIẾT YÊU CẦU FLOW -->
+    <div id="chitiet-yeucau-flow" class="absolute inset-0 z-[60] bg-[#F2F2F7] flex-col hidden overflow-hidden rounded-[54px] pt-10">
+        <div class="flex-1 flex flex-col w-full h-full bg-[#F2F2F7]">
+            <!-- Header -->
+            <div class="bg-white px-4 pt-4 pb-3 flex items-center justify-between sticky top-0 z-10 rounded-t-[54px]">
+                <button onclick="closeChiTietYeuCau()" class="p-1.5 -ml-1.5 rounded-full hover:bg-slate-100 transition">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-slate-800"></i>
+                </button>
+                <h2 class="text-base font-bold text-slate-900">Chi tiết yêu cầu</h2>
+                <div class="w-6"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 overflow-y-auto no-scrollbar p-4 space-y-4 pb-28 relative">
+                
+                <!-- Nhân viên kỹ thuật -->
+                <div>
+                    <h3 class="font-bold text-slate-900 text-[15px] mb-2">Nhân viên kỹ thuật</h3>
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold text-slate-900 text-[14px]">Minh Ngọc Sơn</div>
+                            <div class="text-slate-500 text-[13px] mt-0.5">0912345678</div>
+                        </div>
+                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition">
+                            <i data-lucide="phone" class="w-4 h-4 text-slate-700"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thông tin yêu cầu -->
+                <div>
+                    <h3 class="font-bold text-slate-900 text-[15px] mb-2">Thông tin yêu cầu</h3>
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <div id="detail-lich-hen-label" class="text-slate-600 text-[13px]">Lịch hẹn</div>
+                            <div class="font-semibold text-slate-900 text-[13px]">9:00 25/12/2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin khách hàng -->
+                <div>
+                    <h3 class="font-bold text-slate-900 text-[15px] mb-2">Thông tin khách hàng</h3>
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Họ và tên</div>
+                            <div class="font-semibold text-slate-900 text-[13px] text-right">Nguyễn Văn A</div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Số điện thoại</div>
+                            <div class="font-semibold text-slate-900 text-[13px] text-right">09123456789</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin đơn hàng -->
+                <div>
+                    <h3 class="font-bold text-slate-900 text-[15px] mb-2">Thông tin đơn hàng</h3>
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Loại đơn hàng</div>
+                            <div id="detail-loai-don" class="font-semibold text-slate-900 text-[13px] text-right">Đấu nối cố định FTTH</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-slate-600 text-[13px]">Mã đơn hàng</div>
+                            <div class="font-semibold text-slate-900 text-[13px]">6196411852</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-slate-600 text-[13px]">Trạng thái</div>
+                            <div class="bg-blue-50 border border-blue-100 text-blue-500 px-2.5 py-0.5 rounded-full text-[11px] font-bold flex items-center space-x-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                <span>Chờ triển khai</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Gói cước</div>
+                            <div id="detail-goi-cuoc" class="font-semibold text-slate-900 text-[13px] text-right">MESHVT1T</div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Ngày tạo đơn</div>
+                            <div class="font-semibold text-slate-900 text-[13px] text-right">9:00-10:00 • 25/12/2025</div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px] flex-shrink-0 mr-4">Địa chỉ lắp đặt</div>
+                            <div class="font-semibold text-slate-900 text-[13px] text-right">Số 1 Giang Văn Minh<br>P. Giảng Võ, TP. Hà Nội</div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Hình thức ký</div>
+                            <div class="font-semibold text-slate-900 text-[13px] text-right">Trực tuyến</div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="text-slate-600 text-[13px]">Hình thức đóng cước</div>
+                            <div class="font-semibold text-slate-900 text-[13px] text-right">6 tháng</div>
+                        </div>
+                        <!-- Hidden Camera fields -->
+                        <div id="detail-camera-fields" class="hidden flex-col space-y-3 pt-3 border-t border-slate-100 mt-3">
+                            <div class="flex justify-between items-start">
+                                <div class="text-slate-600 text-[13px]">Camera 1</div>
+                                <div class="font-semibold text-slate-900 text-[13px] text-right">Trong nhà</div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div class="text-slate-600 text-[13px]">Camera 2</div>
+                                <div class="font-semibold text-slate-900 text-[13px] text-right">Ngoài trời</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Cước phí -->
+                <div>
+                    <h3 class="font-bold text-slate-900 text-[15px] mb-2">Cước phí</h3>
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-6">
+                        <div class="space-y-3 mb-3 pb-3 border-b border-slate-100">
+                            <div class="flex justify-between items-start">
+                                <div class="text-slate-600 text-[13px]">Cước đóng trước</div>
+                                <div class="font-semibold text-slate-900 text-[13px] text-right">1.170.000đ</div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div class="text-slate-600 text-[13px]">Phí lắp đặt</div>
+                                <div class="font-semibold text-slate-900 text-[13px] text-right">300.000đ</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="font-bold text-slate-900 text-[13px]">Tổng tiền (đã bao gồm VAT)</div>
+                            <div class="font-bold text-slate-900 text-[14px]">1.470.000đ</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sticky Footer -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-100 pb-8">
+                <button id="detail-footer-btn" onclick="openXacNhanModal()" class="w-full h-[46px] rounded-full bg-[#1A1A1A] text-white font-bold text-[14px] hover:bg-black transition active:scale-95">
+                    Xác nhận lịch hẹn
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modal Xác nhận lịch hẹn -->
+    <div id="xacnhan-modal" class="absolute inset-0 z-[70] bg-black/60 hidden flex-col items-center justify-center p-4">
+        <div class="bg-white w-full max-w-[340px] rounded-3xl p-6 relative">
+            <button onclick="closeXacNhanModal()" class="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 mt-2">Xác nhận lịch hẹn</h3>
+            <p class="text-slate-600 text-[15px] mb-1">Bạn đồng ý xác nhận lịch hẹn vào lúc</p>
+            <p class="text-slate-900 font-bold text-[15px] mb-6">14:30 21/10/2025.</p>
+            
+            <div class="flex space-x-3">
+                <button onclick="openHuyLichModal()" class="flex-1 h-11 border border-slate-300 rounded-full text-slate-800 font-bold text-[14px] hover:bg-slate-50 transition active:scale-95">
+                    Không đồng ý
+                </button>
+                <button onclick="openThanhCongModal()" class="flex-1 h-11 bg-[#1A1A1A] rounded-full text-white font-bold text-[14px] hover:bg-black transition active:scale-95">
+                    Đồng ý
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modal Thành công -->
+    <div id="thanhcong-modal" class="absolute inset-0 z-[70] bg-black/60 hidden flex-col items-center justify-center p-4">
+        <div class="bg-white w-full max-w-[340px] rounded-3xl p-6 relative">
+            <button onclick="closeThanhCongModal()" class="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="mb-4">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-green-500 to-green-400 flex items-center justify-center shadow-lg shadow-green-200">
+                    <i data-lucide="check" class="w-8 h-8 text-white drop-shadow-md"></i>
+                </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Yêu cầu đã được xác nhận</h3>
+            <p class="text-slate-600 text-[15px] mb-6">Nhân viên Viettel sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+            
+            <button onclick="closeThanhCongModal(); closeChiTietYeuCau();" class="w-full h-11 bg-[#1A1A1A] rounded-full text-white font-bold text-[14px] hover:bg-black transition active:scale-95">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    
+    <!-- Modal Huỷ lịch hẹn -->
+    <div id="huylich-modal" class="absolute inset-0 z-[70] bg-black/60 hidden flex-col items-center justify-center p-4">
+        <div class="bg-white w-full max-w-[340px] rounded-3xl p-6 relative">
+            <button onclick="closeHuyLichModal()" class="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="mb-4">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-red-500 to-pink-400 flex items-center justify-center shadow-lg shadow-red-200">
+                    <i data-lucide="x" class="w-8 h-8 text-white drop-shadow-md"></i>
+                </div>
+            </div>
+            <h3 id="huylich-modal-title" class="text-xl font-bold text-slate-900 mb-2">Bạn đã hủy lịch hẹn</h3>
+            <p class="text-slate-600 text-[15px] mb-6">Nhân viên Viettel sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+            
+            <button onclick="closeHuyLichModal(); closeChiTietYeuCau();" class="w-full h-11 bg-[#1A1A1A] rounded-full text-white font-bold text-[14px] hover:bg-black transition active:scale-95">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    
+    <!-- Modal Xác nhận huỷ đơn hàng -->
+    <div id="xacnhan-huy-modal" class="absolute inset-0 z-[70] bg-black/60 hidden flex-col items-center justify-center p-4">
+        <div class="bg-white w-full max-w-[340px] rounded-3xl p-6 relative">
+            <button onclick="closeXacNhanHuyModal()" class="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 mt-2">Xác nhận hủy đơn hàng</h3>
+            <p class="text-slate-600 text-[15px] mb-6">Bạn có chắc chắn muốn hủy yêu cầu đăng ký internet gói <strong id="modal-huy-goi-cuoc" class="text-slate-900 font-bold">MESHVT1T</strong> không?</p>
+            
+            <div class="flex space-x-3">
+                <button onclick="closeXacNhanHuyModal(); openHuyLichModal(true);" class="flex-1 h-11 border border-slate-300 rounded-full text-slate-800 font-bold text-[14px] hover:bg-slate-50 transition active:scale-95">
+                    Hủy
+                </button>
+                <button onclick="openThanhCongHuyModal()" class="flex-1 h-11 bg-[#1A1A1A] rounded-full text-white font-bold text-[14px] hover:bg-black transition active:scale-95">
+                    Đồng ý
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modal Huỷ đơn hàng thành công -->
+    <div id="thanhcong-huydon-modal" class="absolute inset-0 z-[70] bg-black/60 hidden flex-col items-center justify-center p-4">
+        <div class="bg-white w-full max-w-[340px] rounded-3xl p-6 relative">
+            <button onclick="closeThanhCongHuyDonModal()" class="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="mb-4">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-green-500 to-green-400 flex items-center justify-center shadow-lg shadow-green-200">
+                    <i data-lucide="check" class="w-8 h-8 text-white drop-shadow-md"></i>
+                </div>
+            </div>
+            <h3 class="text-[17px] font-bold text-slate-900 mb-6 mt-1">Huỷ đơn hàng thành công</h3>
+            
+            <button onclick="closeThanhCongHuyDonModal(); closeChiTietYeuCau();" class="w-full h-11 bg-[#1A1A1A] rounded-full text-white font-bold text-[14px] hover:bg-black transition active:scale-95">
+                Đóng
+            </button>
+        </div>
+    </div>
+
     <!-- END OF MOBILE DEVICE FRAME CONTAINER -->
     </div>
 
@@ -2450,6 +2779,165 @@
                 flow.classList.add('hidden');
                 flow.classList.remove('flex');
             }
+
+        
+        
+        function openChiTietYeuCau(type, action = 'confirm') {
+            const flow = document.getElementById('chitiet-yeucau-flow');
+            
+            const elLoaiDon = document.getElementById('detail-loai-don');
+            const elGoiCuoc = document.getElementById('detail-goi-cuoc');
+            const elCameraFields = document.getElementById('detail-camera-fields');
+            const elLichHenLabel = document.getElementById('detail-lich-hen-label');
+            const elFooterBtn = document.getElementById('detail-footer-btn');
+            
+            if (type === 'combo') {
+                if (elLoaiDon) elLoaiDon.innerText = 'Combo Internet - TV360';
+                if (elGoiCuoc) elGoiCuoc.innerText = 'MESHVT01_GIAITRI';
+                if (elCameraFields) elCameraFields.classList.replace('flex', 'hidden');
+            } else if (type === 'camera') {
+                if (elLoaiDon) elLoaiDon.innerText = 'Combo Internet - Camera';
+                if (elGoiCuoc) elGoiCuoc.innerText = 'MESHVT1T_CAM';
+                if (elCameraFields) elCameraFields.classList.replace('hidden', 'flex');
+            } else {
+                if (elLoaiDon) elLoaiDon.innerText = 'Đấu nối cố định FTTH';
+                if (elGoiCuoc) elGoiCuoc.innerText = 'MESHVT1T';
+                if (elCameraFields) elCameraFields.classList.replace('flex', 'hidden');
+            }
+
+            if (action === 'cancel') {
+                if (elLichHenLabel) elLichHenLabel.innerText = 'Lịch hẹn huỷ';
+                if (elFooterBtn) elFooterBtn.innerText = 'Xác nhận huỷ đơn';
+            } else {
+                if (elLichHenLabel) elLichHenLabel.innerText = 'Lịch hẹn';
+                if (elFooterBtn) elFooterBtn.innerText = 'Xác nhận lịch hẹn';
+            }
+
+            if (flow) {
+                flow.classList.remove('hidden');
+                flow.classList.add('flex');
+                lucide.createIcons();
+            }
+        }
+        }
+        }
+        function closeChiTietYeuCau() {
+            const flow = document.getElementById('chitiet-yeucau-flow');
+            if (flow) {
+                flow.classList.add('hidden');
+                flow.classList.remove('flex');
+            }
+
+        function openXacNhanModal() {
+            const footerBtn = document.getElementById('detail-footer-btn');
+            // Only open if action is confirm (not cancel)
+            if (footerBtn && footerBtn.innerText === 'Xác nhận lịch hẹn') {
+                const modal = document.getElementById('xacnhan-modal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    lucide.createIcons();
+                }
+            } else if (footerBtn && footerBtn.innerText === 'Xác nhận huỷ đơn') {
+                openXacNhanHuyModal();
+            }
+        }
+        function closeXacNhanModal() {
+            const modal = document.getElementById('xacnhan-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+
+        function openThanhCongModal() {
+            closeXacNhanModal();
+            const modal = document.getElementById('thanhcong-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            }
+        }
+        function closeThanhCongModal() {
+            const modal = document.getElementById('thanhcong-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+
+        function openHuyLichModal(isCancelOrder = false) {
+            closeXacNhanModal();
+            const modal = document.getElementById('huylich-modal');
+            const title = document.getElementById('huylich-modal-title');
+            if (title) {
+                if (isCancelOrder) {
+                    title.innerText = 'Bạn không xác nhận huỷ đơn hàng';
+                } else {
+                    title.innerText = 'Bạn đã hủy lịch hẹn';
+                }
+            }
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            }
+        }
+        function closeHuyLichModal() {
+            const modal = document.getElementById('huylich-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+
+        function openXacNhanHuyModal() {
+            const modal = document.getElementById('xacnhan-huy-modal');
+            const elGoiCuoc = document.getElementById('detail-goi-cuoc');
+            const modalGoiCuoc = document.getElementById('modal-huy-goi-cuoc');
+            
+            if (modalGoiCuoc && elGoiCuoc) {
+                modalGoiCuoc.innerText = elGoiCuoc.innerText;
+            }
+            
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            }
+        }
+        function closeXacNhanHuyModal() {
+            const modal = document.getElementById('xacnhan-huy-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+        function openThanhCongHuyModal() {
+            closeXacNhanHuyModal();
+            const modal = document.getElementById('thanhcong-huydon-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            }
+        }
+
+        function closeThanhCongHuyDonModal() {
+            const modal = document.getElementById('thanhcong-huydon-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+
+        }
+
+        }
+
+        }
+
+        }
+
         }
 
 
