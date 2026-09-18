@@ -3917,5 +3917,40 @@ const container = document.getElementById('document-list');
             document.getElementById('popup-chan1chieu-doc').classList.add('flex');
             lucide.createIcons();
         }
-\n</body>
+
+        function navigateToAccountManagement(tab) {
+            document.getElementById('screen-home').classList.add('hidden');
+            document.getElementById('screen-account').classList.remove('hidden');
+            lucide.createIcons();
+            switchAccountTab(tab);
+        }
+
+        function switchAccountTab(tab) {
+            const tabs = ['mobile', 'internet', 'tv', 'tv360', 'camera', 'mysign'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('btn-acc-tab-' + t);
+                const content = document.getElementById('acc-content-' + t);
+                if (btn) {
+                    if (t === tab) {
+                        btn.className = "pb-3 text-[14px] font-bold text-slate-900 border-b-2 border-viettel";
+                    } else {
+                        btn.className = "pb-3 text-[14px] font-medium text-slate-500 border-b-2 border-transparent";
+                    }
+                }
+                if (content) {
+                    if (t === tab) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        function navigateBackFromAccount() {
+            document.getElementById('screen-account').classList.add('hidden');
+            document.getElementById('screen-home').classList.remove('hidden');
+        }
+</script>
+</body>
 </html>
